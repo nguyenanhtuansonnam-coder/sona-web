@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SoNa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05080f;--s:#0b1220;--s2:#101a2d;--line:#1d2b45;--t:#e8eefc;--m:#9aa8c3;--a:#3d7bff;--a2:#36d6ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:"Be Vietnam Pro",system-ui,sans-serif;line-height:1.6}
+a{color:inherit}header{display:flex;align-items:center;gap:10px;padding:16px;max-width:1000px;margin:auto}
+.logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--a),var(--a2));display:grid;place-items:center;font-weight:800}
+header b{font-size:20px}main{max-width:1000px;margin:auto;padding:0 16px 60px}
+.hero{padding:30px 0 20px}.hero h1{font-size:clamp(26px,6vw,40px);line-height:1.2;margin:0 0 8px}.hero p{color:var(--m);margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:20px}
+.card{background:var(--s);border:1px solid var(--line);border-radius:16px;padding:18px;text-decoration:none;display:flex;flex-direction:column;gap:8px}
+.card:hover{border-color:var(--a)}.tag{font-size:12px;font-weight:600;color:var(--a2)}.card h2{margin:0;font-size:19px}.card p{margin:0;color:var(--m);font-size:14px}
+.price{font-size:20px;font-weight:800}
+.p-top{border-radius:20px;padding:28px 20px;margin:10px 0 18px;color:#fff}
+.p-top h1{margin:0 0 8px;font-size:clamp(26px,6vw,38px);line-height:1.2}
+.btn{display:block;text-align:center;background:var(--pc,var(--a));color:#fff;font-weight:700;border:0;border-radius:14px;padding:16px;font-size:18px;cursor:pointer;width:100%;font-family:inherit}
+.sec{background:var(--s);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}.sec h2{margin:0 0 10px;font-size:18px}
+ul{padding-left:20px;margin:0}.pk{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-top:1px solid var(--line)}.pk:first-of-type{border-top:0}
+.qr{text-align:center}.qr img{width:260px;max-width:100%;background:#fff;border-radius:14px;padding:8px}.muted{color:var(--m);font-size:14px}
+.back{display:inline-block;margin:6px 0;color:var(--m);text-decoration:none}footer{text-align:center;color:var(--m);font-size:13px;padding:20px}
+</style></head><body>
+<header><div class="logo">S</div><b id="siteName">SoNa</b></header>
+<main id="app"></main>
+<footer id="foot"></footer>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let SITE={},PRODUCTS=[];
+async function load(){
+  [SITE,PRODUCTS]=await Promise.all([fetch("site.json").then(r=>r.json()),fetch("products.json").then(r=>r.json())]);
+  $("#siteName").textContent=SITE.ten_web||"SoNa";$("#foot").textContent=[SITE.zalo&&"Zalo: "+SITE.zalo,SITE.email].filter(Boolean).join(" · ")||"SoNa";
+  route();}
+function route(){const m=location.hash.match(/^#sp\/([\w-]+)/);const p=m&&PRODUCTS.find(x=>x.slug===m[1]);p?product(p):home();window.scrollTo(0,0)}
+function home(){document.title=SITE.ten_web||"SoNa";
+  $("#app").innerHTML=`<section class="hero"><h1>${esc(SITE.khau_hieu)}</h1><p>Chọn sản phẩm, quét QR, nhận ngay.</p></section>
+  ${PRODUCTS.length?"":`<section class="sec" style="text-align:center"><h2>Sản phẩm đầu tiên sắp ra mắt</h2><p class="muted">Nhà máy SoNa đang hoàn thiện. Quay lại sau ít ngày nhé.</p></section>`}<div class="grid">${PRODUCTS.map(p=>`<a class="card" href="#sp/${esc(p.slug)}"><span class="tag">${esc(p.loai)}</span><h2>${esc(p.ten)}</h2><p>${esc(p.phu_de)}</p><span class="price">${esc(p.goi?.[0]?.gia)}</span></a>`).join("")}</div>`}
+function qrUrl(p,g){const t=SITE.thanh_toan||{};if(!t.ngan_hang||!t.so_tai_khoan)return"";
+  const info=(p.ma||"SONA")+" "+Date.now().toString(36).slice(-5).toUpperCase();
+  return`https://img.vietqr.io/image/${encodeURIComponent(t.ngan_hang)}-${encodeURIComponent(t.so_tai_khoan)}-compact2.png?amount=${g.so_tien||""}&addInfo=${encodeURIComponent(info)}&accountName=${encodeURIComponent(t.ten_tai_khoan||"")}`}
+function product(p){document.title=p.ten+" · "+(SITE.ten_web||"SoNa");
+  if(p.font&&p.font!=="Be Vietnam Pro"){const l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family="+encodeURIComponent(p.font)+":wght@400;700&display=swap";document.head.append(l)}
+  $("#app").innerHTML=`<a class="back" href="#">← Tất cả sản phẩm</a>
+  <div style="--pc:${esc(p.mau)};font-family:'${esc(p.font)}','Be Vietnam Pro',sans-serif">
+  <section class="p-top" style="background:linear-gradient(135deg,${esc(p.mau)},#0b1220)"><span class="tag" style="color:#fff;opacity:.85">${esc(p.loai)}</span><h1>${esc(p.ten)}</h1><p>${esc(p.phu_de)}</p></section>
+  <section class="sec"><h2>Dành cho</h2><p>${esc(p.cho_ai)}</p></section>
+  <section class="sec"><h2>Anh chị nhận được</h2><ul>${(p.loi_ich||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>
+  <section class="sec" id="mua"><h2>Chọn gói</h2>${(p.goi||[]).map((g,i)=>`<div class="pk"><div><b>${esc(g.ten)}</b><div class="price">${esc(g.gia)}</div></div><button class="btn" style="width:auto;padding:12px 18px" data-i="${i}">Mua</button></div>`).join("")}<div id="pay"></div></section>
+  <section class="sec"><h2>Cách nhận</h2><p>${esc(p.cach_nhan)}</p></section>
+  <section class="sec"><h2>Câu hỏi hay gặp</h2>${(p.cau_hoi||[]).map(q=>`<p><b>${esc(q.hoi)}</b><br>${esc(q.dap)}</p>`).join("")}</section></div>`;
+  document.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{const g=p.goi[b.dataset.i];const u=qrUrl(p,g);
+    $("#pay").innerHTML=u?`<div class="qr"><p>Quét QR bằng app ngân hàng để trả <b>${esc(g.gia)}</b>. Giữ nguyên nội dung chuyển khoản để hệ thống tự gửi sản phẩm.</p><img alt="Mã QR thanh toán" src="${u}"><p class="muted">Cần hỗ trợ: ${esc(SITE.zalo||SITE.email||"")}</p></div>`
+      :`<p class="muted">Web chưa có thông tin nhận tiền. Chủ web điền vào site.json.</p>`})}
+addEventListener("hashchange",route);load();
+</script></body></html>
