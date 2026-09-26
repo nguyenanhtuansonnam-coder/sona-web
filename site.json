@@ -5,8 +5,9 @@
   "email": "",
   "thanh_toan": {
     "ghi_chu": "Chỉ là thông tin NHẬN tiền công khai (mã ngân hàng + số tài khoản + tên). Không bao giờ ghi mật khẩu, OTP ở đây.",
-    "ngan_hang": "",
-    "so_tai_khoan": "",
-    "ten_tai_khoan": ""
+    "ngan_hang": "970415",
+    "so_tai_khoan": "100876937421",
+    "ten_tai_khoan": "NGUYEN ANH TUAN",
+    "ten_ngan_hang": "VietinBank"
   }
 }
