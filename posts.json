@@ -1,0 +1,31 @@
+[
+  {
+    "slug": "tra-loi-khach-hoi-gia-bang-ai",
+    "tieu_de": "Trả lời khách hỏi giá bằng AI mà không bị máy móc",
+    "tom_tat": "Khách nhắn \"bao nhiêu tiền\" rồi im luôn? Cách nhờ ChatGPT viết câu trả lời có giá, có lợi ích và có câu hỏi mở để khách nói tiếp.",
+    "chu_de": "Chăm khách",
+    "ngay": "2026-09-27",
+    "phut": 3,
+    "sp": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
+    "noi_dung": "Khách nhắn \"giá bao nhiêu em\" mà mình chỉ trả lời đúng một con số thì rất dễ bị im luôn. Câu trả lời tốt thường có đủ 3 phần: **giá**, **khách nhận được gì**, và **một câu hỏi để khách trả lời tiếp**.\n\n## Câu lệnh chép dùng ngay\n\n> Khách nhắn: \"[dán tin nhắn của khách]\". Viết câu trả lời cho tiệm [tên tiệm]: báo giá [tên dịch vụ] là [giá], nói ngắn dịch vụ gồm những bước gì, rồi hỏi khách muốn đặt khung giờ nào. Dưới 50 chữ, xưng em, gọi khách là chị.\n\n## Vì sao câu này hiệu quả\n\n- Có sẵn **giá thật** nên máy không tự bịa giá.\n- Bắt máy nói **khách nhận được gì**, khách thấy đáng tiền hơn một con số trơn.\n- Kết bằng **câu hỏi chọn giờ**, khách dễ trả lời hơn là \"chị cần gì thêm không ạ\".\n- Giới hạn **dưới 50 chữ** để tin nhắn đọc trên điện thoại không bị dài.\n\n## Trước khi gửi, soát 3 điều\n\n- Giá và tên dịch vụ đúng với bảng giá của tiệm.\n- Không hứa kết quả chắc chắn kiểu \"đảm bảo hết mụn\".\n- Đọc lại xem có giống giọng mình nói chuyện với khách không, sửa vài chữ cho tự nhiên.\n\nMẹo nhỏ: câu trả lời nào khách hay phản hồi tốt, anh chị lưu vào ghi chú điện thoại để lần sau chép lại, khỏi phải nhờ máy viết lại."
+  },
+  {
+    "slug": "3-cau-lenh-viet-bai-khuyen-mai",
+    "tieu_de": "3 câu lệnh viết bài khuyến mãi dùng ngay cho tiệm nhỏ",
+    "tom_tat": "Chép 3 câu này vào ChatGPT, đổi tên tiệm và giá là có bài đăng Facebook trong 1 phút.",
+    "chu_de": "Viết nội dung",
+    "ngay": "2026-09-27",
+    "phut": 3,
+    "sp": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
+    "noi_dung": "Máy viết hay hay dở phụ thuộc vào việc mình đưa đủ thông tin hay chưa. Bí quyết là luôn nói rõ **4 điều**: tiệm tên gì, bán dịch vụ gì, giá bao nhiêu, khách của mình là ai.\n\n## Câu 1: Bài giới thiệu dịch vụ\n\n> Bạn là người viết bài cho tiệm nhỏ ở Việt Nam. Viết 1 bài Facebook khoảng 80 chữ giới thiệu [tên dịch vụ] giá [giá] tại [tên tiệm] ở [khu vực]. Giọng thân thiện, xưng em, gọi khách là chị. Cuối bài mời khách nhắn tin đặt lịch.\n\n## Câu 2: Bài khuyến mãi có hạn\n\n> Viết bài báo giảm [mức giảm] cho [tên dịch vụ] tại [tên tiệm], áp dụng đến [ngày hết hạn]. 5 dòng, có 2 đến 3 biểu tượng cảm xúc, nói rõ giá trước và sau khi giảm, không dùng từ \"tốt nhất\", \"số 1\".\n\n## Câu 3: Tiêu đề thu hút\n\n> Viết 5 dòng tiêu đề ngắn dưới 10 chữ cho bài khuyến mãi [tên dịch vụ] của [tên tiệm]. Mỗi dòng một kiểu: câu hỏi, con số, lợi ích, thời hạn, cảm xúc.\n\n## Khi bài chưa ưng\n\n- Dài quá: gõ tiếp \"viết ngắn lại còn 4 dòng\".\n- Khô cứng: gõ \"viết lại giọng thân mật như nói chuyện với khách quen\".\n- Sai giá hoặc sai tên: sửa tay trước khi đăng, đừng để máy tự đoán.\n\nLàm quen rồi, mỗi bài chỉ mất khoảng 1 phút thay vì ngồi nghĩ cả buổi tối."
+  },
+  {
+    "slug": "chatgpt-la-gi-mo-lan-dau",
+    "tieu_de": "ChatGPT là gì? Mở lần đầu trong 5 phút",
+    "tom_tat": "Hiểu ChatGPT bằng lời đời thường và làm theo 4 bước để gõ câu đầu tiên, dùng bản miễn phí.",
+    "chu_de": "Bắt đầu",
+    "ngay": "2026-09-27",
+    "phut": 4,
+    "noi_dung": "Hãy hình dung ChatGPT như **một bạn nhân viên biết viết chữ rất nhanh**. Mình nói yêu cầu, bạn ấy viết ra, mình đọc lại rồi sửa cho hợp. Bạn ấy không biết tiệm mình tên gì, giá bao nhiêu, nên mình nói càng rõ thì bài càng sát.\n\n## 4 bước mở lần đầu\n\n- **Bước 1:** mở trình duyệt trên điện thoại hoặc máy tính, vào trang chatgpt.com. Hoặc tải app ChatGPT trên kho ứng dụng của điện thoại.\n- **Bước 2:** đăng ký bằng email hoặc tài khoản Google. Bản miễn phí là đủ dùng cho việc viết bài và trả lời khách.\n- **Bước 3:** tìm ô gõ chữ ở dưới cùng màn hình.\n- **Bước 4:** gõ câu đầu tiên rồi bấm nút gửi hình mũi tên.\n\n## Câu đầu tiên nên thử\n\n> Tôi làm chủ một tiệm nhỏ. Viết giúp tôi 1 câu chào khách mới ghé tiệm lần đầu, giọng nhẹ nhàng, thân thiện, dưới 30 chữ.\n\n## 3 lỗi hay gặp lần đầu\n\n- **Gõ quá ngắn**, ví dụ chỉ gõ \"viết bài spa\": máy trả lời chung chung. Hãy nói rõ tên tiệm, dịch vụ, giá.\n- **Quên nói khách là ai**: khách văn phòng, khách lớn tuổi hay học sinh sẽ cần giọng khác nhau.\n- **Tin máy tuyệt đối**: máy có thể ghi sai giá, sai giờ. Luôn đọc lại trước khi đăng.\n\nChỉ cần làm được câu đầu tiên là anh chị đã qua phần khó nhất."
+  }
+]
