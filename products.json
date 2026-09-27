@@ -1,1 +1,48 @@
-[]
+[
+  {
+    "slug": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
+    "ma": "SP02",
+    "loai": "Tài liệu",
+    "ten": "ChatGPT Cho Chủ Spa: Tự Viết Bài, Trả Lời Khách",
+    "phu_de": "Cẩm nang cầm tay chỉ việc, dùng ChatGPT viết bài khuyến mãi và trả lời tin nhắn khách hỏi giá. Không cần biết công nghệ, đọc một buổi tối là dùng được.",
+    "cho_ai": "Chủ spa nhỏ chưa từng dùng ChatGPT, muốn tự viết nội dung mà không tốn thời gian học công nghệ.",
+    "loi_ich": [
+      "Hướng dẫn mở ChatGPT lần đầu bằng lời đời thường, bấm đâu gõ gì ghi rõ từng bước",
+      "30 câu mẫu chép-dán cho spa: bài khuyến mãi, trả lời hỏi giá, nhắn khách quay lại, việc nội bộ tiệm",
+      "Lịch nội dung 4 tuần điền sẵn: mỗi tuần 3 bài đăng và 1 lần nhắn khách quen",
+      "Checklist 5 việc làm ngay trong ngày đầu tiên",
+      "Mỗi câu mẫu có kết quả thật đi kèm, biết trước máy viết ra thế nào"
+    ],
+    "goi": [
+      {
+        "ten": "Cẩm nang PDF",
+        "gia": "49.000đ",
+        "mo_ta": "Ebook PDF 10 phần: 5 chương, 30 câu mẫu chép-dán, lịch nội dung 4 tuần. Hỗ trợ Zalo 7 ngày.",
+        "so_tien": 49000
+      }
+    ],
+    "cach_nhan": "Anh chị quét mã QR để chuyển khoản, giữ nguyên nội dung chuyển khoản có mã đơn. SoNa kiểm tra tiền về rồi gửi file PDF qua Zalo hoặc email trong giờ làm việc 8h–20h. Hỗ trợ hỏi đáp qua Zalo 7 ngày, tối đa 5 câu hỏi.",
+    "cau_hoi": [
+      {
+        "hoi": "Tôi chưa từng dùng ChatGPT thì có học được không?",
+        "dap": "Được. Chương 1 hướng dẫn từng bước từ lúc mở ChatGPT lần đầu, viết bằng lời đời thường, không có từ kỹ thuật."
+      },
+      {
+        "hoi": "Mua rồi mà không hiểu thì hỏi ai?",
+        "dap": "Anh chị được SoNa hỗ trợ qua Zalo trong 7 ngày, tối đa 5 câu hỏi, 8h–20h các ngày làm việc."
+      },
+      {
+        "hoi": "Có phải trả thêm tiền hàng tháng không?",
+        "dap": "Không. Mua một lần, nhận file PDF dùng mãi. ChatGPT bản miễn phí là đủ để làm theo cẩm nang."
+      },
+      {
+        "hoi": "Chuyển khoản xong bao lâu thì nhận sách?",
+        "dap": "SoNa kiểm tra tiền về rồi gửi file PDF qua Zalo hoặc email trong giờ làm việc 8h–20h."
+      }
+    ],
+    "mau": "#C98B96",
+    "font": "Quicksand",
+    "nut": "Mua Ngay",
+    "cam_ket": "Sau khi mua, được hỗ trợ qua Zalo trong 7 ngày để hỏi thêm nếu chưa rõ cách dùng."
+  }
+]

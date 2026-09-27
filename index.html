@@ -35,10 +35,10 @@ async function load(){
   route();}
 function route(){const m=location.hash.match(/^#sp\/([\w-]+)/);const p=m&&PRODUCTS.find(x=>x.slug===m[1]);p?product(p):home();window.scrollTo(0,0)}
 function home(){document.title=SITE.ten_web||"SoNa";
-  $("#app").innerHTML=`<section class="hero"><h1>${esc(SITE.khau_hieu)}</h1><p>Chọn sản phẩm, quét QR, nhận ngay.</p></section>
+  $("#app").innerHTML=`<section class="hero"><h1>${esc(SITE.khau_hieu)}</h1><p>Chọn sản phẩm, quét QR, SoNa gửi sản phẩm cho anh chị trong giờ làm việc.</p></section>
   ${PRODUCTS.length?"":`<section class="sec" style="text-align:center"><h2>Sản phẩm đầu tiên sắp ra mắt</h2><p class="muted">Nhà máy SoNa đang hoàn thiện. Quay lại sau ít ngày nhé.</p></section>`}<div class="grid">${PRODUCTS.map(p=>`<a class="card" href="#sp/${esc(p.slug)}"><span class="tag">${esc(p.loai)}</span><h2>${esc(p.ten)}</h2><p>${esc(p.phu_de)}</p><span class="price">${esc(p.goi?.[0]?.gia)}</span></a>`).join("")}</div>`}
-function qrUrl(p,g){const t=SITE.thanh_toan||{};if(!t.ngan_hang||!t.so_tai_khoan)return"";
-  const info=(p.ma||"SONA")+" "+Date.now().toString(36).slice(-5).toUpperCase();
+function orderCode(p){return(p.ma||"SONA")+" "+Date.now().toString(36).slice(-5).toUpperCase()}
+function qrUrl(p,g,info){const t=SITE.thanh_toan||{};if(!t.ngan_hang||!t.so_tai_khoan)return"";
   return`https://img.vietqr.io/image/${encodeURIComponent(t.ngan_hang)}-${encodeURIComponent(t.so_tai_khoan)}-compact2.png?amount=${g.so_tien||""}&addInfo=${encodeURIComponent(info)}&accountName=${encodeURIComponent(t.ten_tai_khoan||"")}`}
 function product(p){document.title=p.ten+" · "+(SITE.ten_web||"SoNa");
   if(p.font&&p.font!=="Be Vietnam Pro"){const l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family="+encodeURIComponent(p.font)+":wght@400;700&display=swap";document.head.append(l)}
@@ -50,8 +50,12 @@ function product(p){document.title=p.ten+" · "+(SITE.ten_web||"SoNa");
   <section class="sec" id="mua"><h2>Chọn gói</h2>${(p.goi||[]).map((g,i)=>`<div class="pk"><div><b>${esc(g.ten)}</b><div class="price">${esc(g.gia)}</div></div><button class="btn" style="width:auto;padding:12px 18px" data-i="${i}">Mua</button></div>`).join("")}<div id="pay"></div></section>
   <section class="sec"><h2>Cách nhận</h2><p>${esc(p.cach_nhan)}</p></section>
   <section class="sec"><h2>Câu hỏi hay gặp</h2>${(p.cau_hoi||[]).map(q=>`<p><b>${esc(q.hoi)}</b><br>${esc(q.dap)}</p>`).join("")}</section></div>`;
-  document.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{const g=p.goi[b.dataset.i];const u=qrUrl(p,g);
-    $("#pay").innerHTML=u?`<div class="qr"><p>Quét QR bằng app ngân hàng để trả <b>${esc(g.gia)}</b>. Giữ nguyên nội dung chuyển khoản để hệ thống tự gửi sản phẩm.</p><img alt="Mã QR thanh toán" src="${u}"><p class="muted">Cần hỗ trợ: ${esc(SITE.zalo||SITE.email||"")}</p></div>`
+  document.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{const g=p.goi[b.dataset.i];const code=orderCode(p);const u=qrUrl(p,g,code);const t=SITE.thanh_toan||{};
+    const zl=SITE.zalo?`https://zalo.me/${encodeURIComponent(SITE.zalo.replace(/\D/g,""))}`:"";
+    $("#pay").innerHTML=u?`<div class="qr"><p><b>Bước 1.</b> Quét QR bằng app ngân hàng để trả <b>${esc(g.gia)}</b>. Giữ nguyên nội dung chuyển khoản.</p><img alt="Mã QR thanh toán" src="${u}">
+      <p class="muted">Không quét được thì chuyển tay: ${esc(t.ten_ngan_hang||"")} · ${esc(t.so_tai_khoan)} · ${esc(t.ten_tai_khoan||"")} · nội dung <b>${esc(code)}</b></p>
+      <p><b>Bước 2.</b> Chuyển xong, nhắn SoNa mã đơn <b>${esc(code)}</b> để nhận sản phẩm${SITE.email?` (hoặc email ${esc(SITE.email)})`:""}.</p>
+      ${zl?`<a class="btn" href="${zl}" target="_blank" rel="noopener">Nhắn Zalo SoNa</a>`:""}</div>`
       :`<p class="muted">Web chưa có thông tin nhận tiền. Chủ web điền vào site.json.</p>`})}
 addEventListener("hashchange",route);load();
 </script></body></html>
