@@ -18,7 +18,8 @@
         "ten": "Cẩm nang PDF",
         "gia": "49.000đ",
         "mo_ta": "Ebook PDF 10 phần: 5 chương, 30 câu mẫu chép-dán, lịch nội dung 4 tuần. Hỗ trợ Zalo 7 ngày.",
-        "so_tien": 49000
+        "so_tien": 49000,
+        "gia_niem_yet": 98000
       }
     ],
     "cach_nhan": "Anh chị quét mã QR để chuyển khoản, giữ nguyên nội dung chuyển khoản có mã đơn. SoNa kiểm tra tiền về rồi gửi file PDF qua Zalo hoặc email trong giờ làm việc 8h–20h. Hỗ trợ hỏi đáp qua Zalo 7 ngày, tối đa 5 câu hỏi.",
@@ -43,6 +44,7 @@
     "mau": "#C98B96",
     "font": "Quicksand",
     "nut": "Mua Ngay",
-    "cam_ket": "Sau khi mua, được hỗ trợ qua Zalo trong 7 ngày để hỏi thêm nếu chưa rõ cách dùng."
+    "cam_ket": "Sau khi mua, được hỗ trợ qua Zalo trong 7 ngày để hỏi thêm nếu chưa rõ cách dùng.",
+    "anh_bia": "img/covers/chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox.jpg"
   }
 ]

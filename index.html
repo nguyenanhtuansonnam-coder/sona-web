@@ -46,6 +46,10 @@ header{position:sticky;top:0;z-index:20;background:#07070ad9;backdrop-filter:blu
 .card:hover{transform:translateY(-2px);border-color:#f0b45888}
 .thumb{height:118px;position:relative;display:grid;place-items:center;background:linear-gradient(135deg,#2a1f10,#141014 60%,#1d160c);overflow:hidden}
 .thumb::after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;right:-40px;top:-60px;background:radial-gradient(#f0b45844,transparent 70%)}
+.thumb.img{height:auto;aspect-ratio:16/10;display:block}.thumb.img::after{display:none}.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.cover{border-radius:18px;overflow:hidden;border:1px solid var(--line);margin-bottom:14px;aspect-ratio:16/10;background:#111014}.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.foot .price{white-space:nowrap}.foot .off{margin-left:6px;font-size:11px}.foot .was{margin-left:6px}.btn{white-space:nowrap}
+.was{color:var(--m);text-decoration:line-through;font-weight:600;font-size:.62em;margin-left:8px}.off{display:inline-block;margin-left:8px;font-size:12px;font-weight:800;color:var(--ink);background:var(--a);border-radius:8px;padding:2px 7px;vertical-align:middle}
 .thumb svg{width:46px;height:46px;color:var(--a)}
 .thumb .t{position:absolute;left:12px;top:12px;font-size:12px;font-weight:600;background:#07070ab3;border:1px solid #ffffff1a;border-radius:999px;padding:3px 10px;color:var(--a2)}
 .card .in{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
@@ -171,6 +175,8 @@ const ICON={
 const CATS=[["Tài liệu","Tài liệu"],["App","App"],["Dịch vụ","Dịch vụ"]];
 const catOf=p=>/app/i.test(p.loai||"")?"App":/dịch vụ|dich vu/i.test(p.loai||"")?"Dịch vụ":"Tài liệu";
 const iconOf=p=>({App:ICON.app,"Dịch vụ":ICON.svc}[catOf(p)]||ICON.doc);
+const fmt=n=>Number(n).toLocaleString("vi-VN")+"đ";
+const priceHtml=g=>{const v=priceOf(g);if(!g||!g.gia_niem_yet||!g.so_tien||g.gia_niem_yet<=g.so_tien)return esc(v);const pc=Math.round((1-g.so_tien/g.gia_niem_yet)*100);return`${esc(v)}<span class="was">${fmt(g.gia_niem_yet)}</span><span class="off">-${pc}%</span>`};
 const priceOf=g=>g?(g.so_tien?Number(g.so_tien).toLocaleString("vi-VN")+"đ":String(g.gia||"").split("(")[0].trim()):"";
 let SITE={},PRODUCTS=[],POSTS=[],Q="",CAT="",TOPIC="";
 const zaloUrl=()=>SITE.zalo?"https://zalo.me/"+String(SITE.zalo).replace(/\D/g,""):"";
@@ -227,8 +233,8 @@ function renderGrid(){
   let list=base.filter(p=>!CAT||catOf(p)===CAT).sort((a,b)=>scoreOf(b)-scoreOf(a));
   if(!CAT&&!words.length){const pick=[];["App","Dịch vụ","Tài liệu"].forEach(c=>pick.push(...list.filter(p=>catOf(p)===c).slice(0,3)));list=pick.sort((a,b)=>scoreOf(b)-scoreOf(a)).slice(0,6)}
   $("#gridH").textContent=words.length?list.length+" kết quả":CAT?CAT:list.length?"Gợi ý cho anh chị":"";
-  $("#grid").innerHTML=list.length?list.map(p=>`<a class="card" href="#sp/${esc(p.slug)}"><div class="thumb"><span class="t">${esc(catOf(p))}</span>${iconOf(p)}</div>
-    <div class="in"><h2>${esc(p.ten)}</h2><p>${esc(p.phu_de)}</p><div class="foot"><span class="price">${esc(priceOf(p.goi?.[0]))}</span><span class="go">${ICON.arrow}</span></div></div></a>`).join("")
+  $("#grid").innerHTML=list.length?list.map(p=>`<a class="card" href="#sp/${esc(p.slug)}">${p.anh_bia?`<div class="thumb img"><img src="${esc(p.anh_bia)}" alt="${esc(p.ten)}" loading="lazy"></div>`:`<div class="thumb"><span class="t">${esc(catOf(p))}</span>${iconOf(p)}</div>`}
+    <div class="in"><h2>${esc(p.ten)}</h2><p>${esc(p.phu_de)}</p><div class="foot"><span class="price">${priceHtml(p.goi?.[0])}</span><span class="go">${ICON.arrow}</span></div></div></a>`).join("")
     :`<div class="empty" style="grid-column:1/-1"><b>${words.length?"Chưa có sản phẩm phù hợp":CAT?CAT+" sắp ra mắt":"Sản phẩm đầu tiên sắp ra mắt"}</b>${words.length?"Anh chị thử từ khóa khác.":"SONA đang hoàn thiện, anh chị quay lại sau ít ngày nhé."}</div>`}
 /* ---------- học AI miễn phí: thư mục → bài ---------- */
 const postHit=words=>a=>{const hay=norm([a.tieu_de,a.tom_tat,a.chu_de,a.noi_dung].join(" "));return words.every(w=>hay.includes(w))};
@@ -253,7 +259,7 @@ function infoPage(){document.title="Thông tin · "+(SITE.ten_web||"SONA");const
   $("#app").innerHTML=`<article class="art" style="padding-top:20px"><div class="about-logo"><img src="img/mark-192.png" alt="" width="72" height="72"></div>
   <h1 style="text-align:center">SONA</h1><p class="muted" style="text-align:center;margin:0 0 24px">${esc(SITE.slogan||"Công nghệ tiện ích cho mọi người")}</p>
   <section class="box"><h2>SONA làm gì</h2><p class="muted" style="margin:0">SONA làm công cụ AI đơn giản cho người kinh doanh nhỏ ở Việt Nam: tài liệu hướng dẫn, app dùng ngay trên điện thoại và dịch vụ cài sẵn. Mua một lần, không cần biết công nghệ.</p></section>
-  <section class="box" style="margin-top:14px"><h2>Mua như thế nào</h2><ol class="steps"><li>Chọn sản phẩm, bấm Mua ngay, quét mã QR bằng app ngân hàng.</li><li>Nhắn Zalo SONA mã đơn hiện trên màn hình.</li><li>SONA gửi sản phẩm qua Zalo trong giờ làm việc 8h–20h.</li></ol></section>
+  <section class="box" style="margin-top:14px"><h2>Mua như thế nào</h2><ol class="steps"><li>Chọn sản phẩm, bấm Sử dụng ngay, quét mã QR bằng app ngân hàng.</li><li>Nhắn Zalo SONA mã đơn hiện trên màn hình.</li><li>SONA gửi sản phẩm qua Zalo trong giờ làm việc 8h–20h.</li></ol></section>
   <section class="box" style="margin-top:14px"><h2>Liên hệ</h2><div class="kv">${SITE.hotline?`<div><span>Hotline</span><b>${esc(SITE.hotline)}</b></div>`:""}${SITE.zalo?`<div><span>Zalo</span><b>${esc(SITE.zalo)}</b></div>`:""}${SITE.email?`<div><span>Email</span><b>${esc(SITE.email)}</b></div>`:""}${t.so_tai_khoan?`<div><span>Nhận tiền</span><b>${esc(t.ten_ngan_hang||"")} · ${esc(t.so_tai_khoan)} · ${esc(t.ten_tai_khoan||"")}</b></div>`:""}</div>
   ${links.length?`<div class="fsoc" style="justify-content:flex-start;margin:14px 0 0">${links.map(([n,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(n)}</a>`).join("")}</div>`:""}</section></article>`}
 function md(src){const inl=t=>esc(t).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>");const out=[];let ul=null;
@@ -275,19 +281,20 @@ function product(p){GI=0;noteProduct(p,1);document.title=p.ten+" · "+(SITE.ten_
   const goi=p.goi||[];const g=goi[0]||{};
   $("#app").innerHTML=`<a class="back" href="#">← Tất cả sản phẩm</a>
   <div class="pd"><div class="main">
+    ${p.anh_bia?`<div class="cover"><img src="${esc(p.anh_bia)}" alt="${esc(p.ten)}"></div>`:""}
     <div class="pd-top"><span class="t">${esc(catOf(p))}</span><h1>${esc(p.ten)}</h1><p>${esc(p.phu_de)}</p></div>
     ${(p.loi_ich||[]).length?`<section class="box"><h2>Anh chị nhận được</h2><ul class="ticks">${p.loi_ich.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>`:""}
-    <section class="box"><h2>Mua trong 3 bước</h2><ol class="steps"><li>Bấm Mua ngay, quét mã QR bằng app ngân hàng.</li><li>Nhắn Zalo SONA mã đơn hiện trên màn hình.</li><li>SONA gửi sản phẩm qua Zalo trong giờ làm việc 8h–20h.</li></ol></section>
+    <section class="box"><h2>Mua trong 3 bước</h2><ol class="steps"><li>Bấm Sử dụng ngay, quét mã QR bằng app ngân hàng.</li><li>Nhắn Zalo SONA mã đơn hiện trên màn hình.</li><li>SONA gửi sản phẩm qua Zalo trong giờ làm việc 8h–20h.</li></ol></section>
     ${(p.cau_hoi||[]).length?`<section class="box"><h2>Câu hỏi hay gặp</h2>${p.cau_hoi.map(q=>`<details><summary>${esc(q.hoi)}</summary><p>${esc(q.dap)}</p></details>`).join("")}</section>`:""}
   </div>
   <aside class="side"><section class="box buy">
     ${goi.length>1?`<div class="pk">${goi.map((x,i)=>`<button data-g="${i}" class="${i?"":"on"}"><b>${esc(x.ten)}</b><small>${esc(priceOf(x))}</small></button>`).join("")}</div>`:""}
-    <div class="price" id="bigPrice">${esc(priceOf(g))}</div><div class="old" id="goiInfo">${esc([g.ten,g.mo_ta].filter(Boolean).join(" · "))}</div>
-    <button class="btn" id="buy">Mua ngay ${ICON.arrow}</button>
+    <div class="price" id="bigPrice">${priceHtml(g)}</div><div class="old" id="goiInfo">${esc([g.ten,g.mo_ta].filter(Boolean).join(" · "))}</div>
+    <button class="btn" id="buy">Sử dụng ngay ${ICON.arrow}</button>
     <ul class="trust"><li>${ICON.bolt}Trả bằng mã QR, không cần thẻ</li><li>${ICON.chat}Hỗ trợ qua Zalo${SITE.zalo?" "+esc(SITE.zalo):""}</li><li>${ICON.shield}Mua một lần, không thu phí hàng tháng</li></ul>
   </section></aside></div>
-  <div class="sticky"><span class="price" id="stPrice">${esc(priceOf(g))}</span><button class="btn" id="buy2">Mua ngay</button></div>`;
-  document.querySelectorAll("[data-g]").forEach(b=>b.onclick=()=>{GI=+b.dataset.g;document.querySelectorAll("[data-g]").forEach(x=>x.classList.toggle("on",x===b));const x=goi[GI];$("#bigPrice").textContent=priceOf(x);$("#stPrice").textContent=priceOf(x);$("#goiInfo").textContent=[x.ten,x.mo_ta].filter(Boolean).join(" · ")});
+  <div class="sticky"><span class="price" id="stPrice">${priceHtml(g)}</span><button class="btn" id="buy2">Sử dụng ngay</button></div>`;
+  document.querySelectorAll("[data-g]").forEach(b=>b.onclick=()=>{GI=+b.dataset.g;document.querySelectorAll("[data-g]").forEach(x=>x.classList.toggle("on",x===b));const x=goi[GI];$("#bigPrice").innerHTML=priceHtml(x);$("#stPrice").innerHTML=priceHtml(x);$("#goiInfo").textContent=[x.ten,x.mo_ta].filter(Boolean).join(" · ")});
   $("#buy").onclick=$("#buy2").onclick=()=>openPay(p,goi[GI]||{})}
 /* ---------- thanh toán ---------- */
 const orderCode=p=>(p.ma||"SONA")+" "+Date.now().toString(36).slice(-5).toUpperCase();
