@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="vi">
+<head><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#07070a">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lịch Đăng Spa - SoNa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--xanh:#3d7bff;--nen:#f4f6fb;--chu:#1a2233;--mo:#6b7690;--vien:#e3e8f2}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:'Be Vietnam Pro',sans-serif;background:var(--nen);color:var(--chu);font-size:15px}
+#app{max-width:430px;min-width:320px;margin:0 auto;min-height:100vh;padding-bottom:104px}
+header{background:var(--xanh);color:#fff;padding:16px 16px 18px;border-radius:0 0 18px 18px;position:sticky;top:0;z-index:5}
+header h1{margin:0;font-size:18px;font-weight:700}
+header p{margin:4px 0 0;font-size:13px;opacity:.92}
+.man{display:none;padding:14px}
+.man.hien{display:block}
+.the{background:#fff;border:1px solid var(--vien);border-radius:14px;padding:14px;margin-bottom:12px}
+.the h2{margin:0 0 8px;font-size:16px}
+.the h3{margin:0 0 6px;font-size:15px}
+.mo{color:var(--mo);font-size:13px;line-height:1.55}
+.nhan{display:inline-block;background:#eaf1ff;color:var(--xanh);border-radius:99px;padding:3px 10px;font-size:12px;font-weight:600;margin:0 6px 6px 0}
+.nhan.xam{background:#f0f2f7;color:var(--mo)}
+.nhan.la{background:#e6f7ec;color:#1b8a4b}
+.nhan.cam{background:#fff1e0;color:#b96a12}
+button{font-family:inherit}
+.nut{display:block;width:100%;background:var(--xanh);color:#fff;border:0;border-radius:12px;padding:15px;font-size:16px;font-weight:600;margin-top:10px;cursor:pointer}
+.nut.phu{background:#fff;color:var(--xanh);border:1.5px solid var(--xanh)}
+.nut.nhe{background:#f0f2f7;color:var(--chu);border:0}
+.nut.nho{padding:10px 14px;font-size:14px;width:auto;display:inline-block;margin:8px 8px 0 0}
+label{display:block;font-size:13px;font-weight:600;margin:12px 0 6px}
+input,select,textarea{width:100%;padding:13px;border:1.5px solid var(--vien);border-radius:12px;font-size:15px;font-family:inherit;background:#fff;color:var(--chu)}
+textarea{min-height:90px;resize:vertical}
+.viec{background:#fff;border:1px solid var(--vien);border-left:5px solid var(--xanh);border-radius:14px;padding:14px;margin-bottom:12px}
+.viec.xong{border-left-color:#1b8a4b}
+.cap{background:#f7f9ff;border:1px dashed #c9d8ff;border-radius:10px;padding:10px;margin:8px 0;font-size:14px;line-height:1.6;white-space:pre-wrap}
+.so{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.o{flex:1;min-width:96px;background:#fff;border:1px solid var(--vien);border-radius:14px;padding:12px;text-align:center}
+.o b{display:block;font-size:22px;color:var(--xanh)}
+.o span{font-size:12px;color:var(--mo)}
+.chinh{background:var(--xanh);color:#fff;border-radius:16px;padding:18px;text-align:center;margin-bottom:12px}
+.chinh b{display:block;font-size:42px;line-height:1.15}
+.chinh span{font-size:14px;opacity:.95}
+nav{position:fixed;bottom:0;left:0;right:0;max-width:430px;margin:0 auto;background:#fff;border-top:1px solid var(--vien);display:flex;z-index:9}
+nav button{flex:1;background:none;border:0;padding:9px 1px 13px;font-size:10px;color:var(--mo);cursor:pointer}
+nav button b{display:block;font-size:18px;font-weight:400}
+nav button.chon{color:var(--xanh);font-weight:700}
+.bao{position:fixed;left:50%;transform:translateX(-50%);bottom:110px;background:#1a2233;color:#fff;padding:12px 18px;border-radius:12px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:20;max-width:340px;text-align:center}
+.bao.hien{opacity:1}
+.nhac{background:#fff8e6;border:1px solid #ffe2a8;border-radius:12px;padding:12px;margin-bottom:12px;font-size:13px;line-height:1.55}
+.dv{display:flex;gap:6px;align-items:center;margin-bottom:8px}
+.dv input{flex:1}
+.dv button{background:#f0f2f7;border:0;border-radius:10px;padding:12px;cursor:pointer;font-size:14px}
+.oval{display:flex;gap:4px;flex-wrap:wrap;margin:8px 0}
+.oval i{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--vien);font-style:normal;font-size:11px;display:flex;align-items:center;justify-content:center;color:var(--mo)}
+.oval i.dung{background:var(--xanh);border-color:var(--xanh);color:#fff}
+.hang{display:flex;gap:8px}
+.hang button{flex:1}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--vien)}
+th{color:var(--mo);font-weight:600}
+.gia{background:#eaf1ff;border-radius:12px;padding:12px;font-size:14px;line-height:1.6;margin-bottom:10px}
+</style>
+</head>
+<body>
+<div id="app">
+<header><h1 id="hd-ten">Lịch Đăng Spa</h1><p id="hd-phu">Mỗi tuần 3 bài, mở ra là đăng</p></header>
+<div class="man hien" id="m-homnay"></div>
+<div class="man" id="m-nguon"></div>
+<div class="man" id="m-the"></div>
+<div class="man" id="m-ketqua"></div>
+<div class="man" id="m-huong"></div>
+<nav>
+<button class="chon" data-m="homnay"><b>☀</b>Hôm nay</button>
+<button data-m="nguon"><b>🔎</b>Bài top</button>
+<button data-m="the"><b>🎟</b>Thẻ buổi</button>
+<button data-m="ketqua"><b>📈</b>Kết quả</button>
+<button data-m="huong"><b>❓</b>Tiệm & HD</button>
+</nav>
+</div>
+<div class="bao" id="bao"></div>
+<input type="file" id="nhapfile" accept=".json" style="display:none">
+<script>
+var KEY='sona_spa_lichdang_v6',GIA='390.000đ trọn gói, dùng lâu dài';
+var MAU={ten:'Spa Hương Sen',diachi:'12 Nguyễn Trãi, Quận 5',zalo:'0901234567',mau:true,
+dv:[{ten:'Chăm sóc da mặt',gia:'350.000đ'},{ten:'Massage body thư giãn',gia:'500.000đ'},{ten:'Triệt lông nách',gia:'1.200.000đ'}],
+tho:['Chị Thu','Chị Ngân']};
+var THE_MAU=[
+{ten:'Chị Lan',sdt:'0912345678',dv:'Chăm sóc da mặt',tong:12,dung:4},
+{ten:'Chị Hoa',sdt:'0987654321',dv:'Massage body thư giãn',tong:12,dung:9},
+{ten:'Chị Mai',sdt:'0933221144',dv:'Triệt lông nách',tong:12,dung:1}];
+var DT_MAU=[
+{ngay:'',tho:'Chị Thu',dv:'Chăm sóc da mặt',tien:350000},
+{ngay:'',tho:'Chị Ngân',dv:'Massage body thư giãn',tien:500000},
+{ngay:'',tho:'Chị Thu',dv:'Triệt lông nách',tien:1200000},
+{ngay:'',tho:'Chị Ngân',dv:'Chăm sóc da mặt',tien:350000}];
+var KHO_MAU=[
+{cd:'Ảnh trước - sau 1 buổi chăm da',nen:'Facebook',tt:48000,ng:'Bài top nhóm spa Hà Nội',cau:'Ảnh ghép 2 khung, cùng góc cùng ánh sáng, chữ to ở giữa',kb:'Quay 3 giây da trước, 3 giây da sau, nhạc nhẹ',mau:'Da thay đổi thế nào sau 1 buổi [DỊCH VỤ] tại [TÊN TIỆM]?\n\nẢnh thật của khách, cùng một góc, cùng ánh sáng.\n[DỊCH VỤ] - [GIÁ]\nZalo: [ZALO]'},
+{cd:'Quay trọn quy trình dịch vụ',nen:'TikTok',tt:126000,ng:'Video spa triệu view',cau:'Quay liền mạch không cắt bước, chữ chạy từng bước',kb:'Quay tay chuẩn bị dụng cụ, khách nằm thư giãn, chốt bằng nụ cười khách',mau:'Bên trong 1 buổi [DỊCH VỤ] tại [TÊN TIỆM] diễn ra thế nào?\n\nQuay từ lúc chuẩn bị khăn tới bước cuối, không cắt bước nào.\n[DỊCH VỤ] - [GIÁ]\nZalo: [ZALO]'},
+{cd:'Khách nói cảm nhận thật',nen:'Facebook',tt:31000,ng:'Bài review khách nhiều bình luận',cau:'Quay mặt khách, để nguyên giọng nói, không lồng tiếng',kb:'Phỏng vấn khách 10 giây, hỏi 1 câu duy nhất',mau:'Khách nói gì sau khi làm [DỊCH VỤ] tại [TÊN TIỆM]?\n\nTiệm hỏi đúng một câu: chị thấy sao ạ? Câu trả lời để nguyên.\nZalo: [ZALO]'},
+{cd:'Bảng giá rõ ràng trong tuần',nen:'Facebook',tt:22000,ng:'Bài bảng giá được lưu nhiều',cau:'Nền 1 màu, chữ to, mỗi dòng 1 dịch vụ và 1 giá',kb:'Chụp bảng giá chữ to, 1 màu nền',mau:'BẢNG GIÁ TUẦN NÀY TẠI [TÊN TIỆM]\n\n[DỊCH VỤ]: [GIÁ]\nGiá ghi sao tính vậy, không phát sinh.\nZalo: [ZALO]'},
+{cd:'3 thói quen hại da',nen:'TikTok',tt:98000,ng:'Video mẹo da nhiều lượt lưu',cau:'Đếm 1-2-3, mỗi ý 5 giây, chữ nằm giữa màn hình',kb:'Quay mặt chủ tiệm nói 3 ý, mỗi ý 5 giây',mau:'3 thói quen làm da xấu đi:\n\n1. Rửa mặt nước quá nóng\n2. Chà mạnh khi tẩy trang\n3. Bỏ bước che nắng trong nhà\n\n[TÊN TIỆM] - Zalo: [ZALO]'},
+{cd:'Thẻ liệu trình mua 10 tặng 2',nen:'Facebook',tt:27000,ng:'Bài ưu đãi thẻ buổi nhiều chia sẻ',cau:'Chụp tấm thẻ thật, tick rõ ô đã dùng',kb:'Quay tấm thẻ, tick từng ô đã dùng',mau:'Thẻ liệu trình tại [TÊN TIỆM]:\n\nMua 10 buổi [DỊCH VỤ], tặng thêm 2 buổi.\nMỗi lần tới tiệm trừ 1 buổi, còn bao nhiêu bạn thấy rõ.\nZalo: [ZALO]'},
+{cd:'Hậu trường giặt hấp khăn',nen:'TikTok',tt:75000,ng:'Video hậu trường sạch sẽ lên xu hướng',cau:'Quay cận cảnh, tiếng thật, không nhạc mạnh',kb:'Quay cảnh giặt, hấp, xếp khăn',mau:'Khăn ở [TÊN TIỆM] giặt và hấp mỗi ngày, xếp riêng từng phần.\n\nKhách nằm xuống là khăn còn ấm.\nZalo: [ZALO]'},
+{cd:'Khách lần đầu cần biết gì',nen:'TikTok',tt:64000,ng:'Video hướng dẫn khách mới',cau:'Quay đường đi vào tiệm, chèn 3 dòng chữ ngắn',kb:'Quay cửa tiệm, chỗ để xe, quầy lễ tân',mau:'Lần đầu tới [TÊN TIỆM] chỉ cần nhớ:\n\n1. Nhắn trước để giữ giường\n2. Tới sớm 5 phút\n3. Không cần mang gì thêm\n\n[ĐỊA CHỈ] - Zalo: [ZALO]'},
+{cd:'Ưu đãi khung giờ vắng',nen:'Facebook',tt:19000,ng:'Bài lấp giờ trống nhiều tin nhắn',cau:'Ảnh chữ to ghi đúng khung giờ, 1 câu mời',kb:'Chụp ảnh chữ to ghi khung giờ',mau:'Khung 13h đến 15h ở [TÊN TIỆM] thường vắng.\n\nAi rảnh giờ này nhắn tiệm, được chọn giường và không phải chờ.\n[DỊCH VỤ] - [GIÁ]\nZalo: [ZALO]'},
+{cd:'Chăm da tại nhà sau buổi làm',nen:'TikTok',tt:88000,ng:'Video dặn dò sau dịch vụ',cau:'Cầm từng món lên, nói 1 câu mỗi món',kb:'Quay tay cầm từng món, nói 1 câu mỗi món',mau:'Sau buổi [DỊCH VỤ] tại [TÊN TIỆM], ở nhà bạn chỉ cần:\n\n- Rửa mặt nước mát\n- Dưỡng ẩm mỏng\n- Che nắng khi ra đường\n\nZalo: [ZALO]'},
+{cd:'Sai lầm khi chọn spa',nen:'Facebook',tt:41000,ng:'Bài quan điểm nhiều bình luận',cau:'Nói thẳng vào máy, câu đầu là câu gây chú ý',kb:'Quay chủ tiệm nói thẳng vào máy 20 giây',mau:'Chọn spa đừng chỉ nhìn giá rẻ nhất.\n\nHỏi trước 3 điều: dùng gì lên da, khăn có riêng không, ai là người làm.\n[TÊN TIỆM] trả lời hết trước khi bạn quyết.\nZalo: [ZALO]'},
+{cd:'Combo tiết kiệm trong tháng',nen:'Facebook',tt:25000,ng:'Bài combo nhiều lượt hỏi giá',cau:'Ảnh ghép 2 dịch vụ, ghi rõ làm 1 lượt',kb:'Chụp 2 dịch vụ ghép, chữ to',mau:'Tháng này [TÊN TIỆM] ghép [DỊCH VỤ] với 1 buổi xông mặt.\n\nLàm liền 1 lượt, đỡ đi lại 2 lần.\nGiá gốc [GIÁ], hỏi giá combo qua Zalo [ZALO].'}];
+var S,M='homnay';
+function doc(){try{var t=localStorage.getItem(KEY);if(t)return JSON.parse(t)}catch(e){}return null}
+function luu(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function hai(n){return n<10?'0'+n:''+n}
+function khoa(d){return d.getFullYear()+'-'+hai(d.getMonth()+1)+'-'+hai(d.getDate())}
+function homNay(){var d=new Date();d.setHours(0,0,0,0);return d}
+function thuHai(){var d=homNay(),w=d.getDay();d.setDate(d.getDate()-(w===0?6:w-1));return d}
+function themNgay(d,n){var x=new Date(d.getTime());x.setDate(x.getDate()+n);return x}
+function tuKhoa(k){var p=k.split('-');return new Date(+p[0],+p[1]-1,+p[2])}
+function tenThu(d){return ['Chủ nhật','Thứ 2','Thứ 3','Thứ 4','Thứ 5','Thứ 6','Thứ 7'][d.getDay()]}
+function ngayVN(d){return tenThu(d)+' '+hai(d.getDate())+'/'+hai(d.getMonth()+1)}
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function tien(n){return (n||0).toLocaleString('vi-VN')+'đ'}
+function khoiTao(){S=doc();if(!S)S={};
+if(!S.tiem)S.tiem=JSON.parse(JSON.stringify(MAU));
+if(!S.tiem.tho)S.tiem.tho=['Chị Thu'];
+if(!S.kho)S.kho=JSON.parse(JSON.stringify(KHO_MAU));
+if(!S.the)S.the=JSON.parse(JSON.stringify(THE_MAU));
+if(!S.dt){S.dt=JSON.parse(JSON.stringify(DT_MAU));var m=thuHai();S.dt.forEach(function(x,i){x.ngay=khoa(themNgay(m,i))})}
+if(!S.lich||!S.lich.length)taoLich(false);
+if(!S.ngayDau)S.ngayDau=khoa(homNay());
+if(S.anNhacCai===undefined)S.anNhacCai=false;
+if(!S.zaloSoNa)S.zaloSoNa='0965292875';
+if(S.videoHD===undefined)S.videoHD='';
+if(S.guiTuan===undefined)S.guiTuan=true;
+luu()}
+function dvList(){var d=(S.tiem.dv||[]).filter(function(x){return x.ten});return d.length?d:[{ten:'dịch vụ chính',gia:'liên hệ'}]}
+function dvAt(i){var d=dvList();return d[i%d.length]}
+function ghep(t,i){var d=dvAt(i);return String(t).split('[TÊN TIỆM]').join(S.tiem.ten||'tiệm mình').split('[DỊCH VỤ]').join(d.ten).split('[GIÁ]').join(d.gia).split('[ZALO]').join(S.tiem.zalo||'').split('[ĐỊA CHỈ]').join(S.tiem.diachi||'')}
+function taoLich(giu){
+var kho=S.kho.slice().sort(function(a,b){return (b.tt||0)-(a.tt||0)});
+if(!kho.length)kho=JSON.parse(JSON.stringify(KHO_MAU));
+var mon=thuHai(),cu=giu&&S.lich?S.lich:[],out=[],lech=[0,2,4];
+for(var w=0;w<12;w++)for(var j=0;j<3;j++){
+var k=kho[(w*3+j)%kho.length],id='t'+(w+1)+'-'+j,o=null;
+for(var z=0;z<cu.length;z++)if(cu[z].id===id)o=cu[z];
+out.push({id:id,tuan:w+1,ngay:khoa(themNgay(mon,w*7+lech[j])),nen:k.nen,cd:k.cd,cau:k.cau,kb:k.kb,mau:k.mau,idx:w*3+j,tt:o?o.tt:0})}
+S.lich=out;luu()}
+function bao(t){var b=document.getElementById('bao');b.textContent=t;b.classList.add('hien');clearTimeout(b._t);b._t=setTimeout(function(){b.classList.remove('hien')},2200)}
+function chep(t){try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t);bao('Đã chép, dán thẳng lên bài đăng');return}}catch(e){}
+var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');bao('Đã chép, dán thẳng lên bài đăng')}catch(e){bao('Chưa chép được, bạn bấm giữ để chọn chữ nhé')}document.body.removeChild(a)}
+function tuanNay(){var m=khoa(thuHai());return S.lich.filter(function(x){return x.ngay>=m&&x.ngay<khoa(themNgay(thuHai(),7))})}
+function daDangTuan(){return tuanNay().filter(function(x){return x.tt}).length}
+function veHomNay(){
+var hn=khoa(homNay()),tn=tuanNay(),hnList=S.lich.filter(function(x){return x.ngay===hn}),h='';
+var ngayDung=Math.round((homNay()-tuKhoa(S.ngayDau))/86400000);
+if(ngayDung>=3&&!S.anNhacCai)h+='<div class="nhac"><b>Nên thêm app ra màn hình chính</b><br>Điện thoại có thể tự xoá dữ liệu nếu 7 ngày không mở. Bấm nút chia sẻ của trình duyệt rồi chọn Thêm vào màn hình chính. Nhớ bấm Sao lưu ra file ở mục Tiệm &amp; HD.<div class="hang"><button class="nut nhe nho" data-a="anhnac">Tôi đã cài</button><button class="nut nhe nho" data-a="taifile">Sao lưu ra file</button></div></div>';
+if(S.tiem.mau)h+='<div class="nhac"><b>Đang dùng thông tin mẫu</b><br>Vào mục Tiệm &amp; HD điền tên tiệm, bảng giá và danh sách dịch vụ thật, mọi bài đăng sẽ tự đổi theo.</div>';
+h+='<div class="chinh"><b>'+daDangTuan()+'/3</b><span>Số bài đã đăng trong tuần này</span></div>';
+h+='<div class="the"><h2>Việc hôm nay</h2>';
+if(!hnList.length){
+var kt=S.lich.filter(function(x){return x.ngay>hn})[0];
+h+='<p class="mo">Hôm nay không có bài cần đăng.</p>';
+if(kt)h+='<p class="mo">Bài kế tiếp: '+ngayVN(tuKhoa(kt.ngay))+' đăng '+esc(kt.nen)+' - '+esc(kt.cd)+'</p>';
+h+='</div>'}else{h+='</div>';
+hnList.forEach(function(it){h+=veViec(it)})}
+h+='<div class="the"><h2>Lịch nhắc tuần này</h2><p class="mo">Tuần '+(tn[0]?tn[0].tuan:1)+' trong 12 tuần. Ngày nào đăng Facebook, ngày nào đăng TikTok đã ghi sẵn.</p>';
+tn.forEach(function(it){var d=tuKhoa(it.ngay);
+h+='<div style="display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--vien)"><div><b>'+ngayVN(d)+'</b><br><span class="mo">'+esc(it.cd)+'</span></div><div style="text-align:right"><span class="nhan '+(it.nen==='TikTok'?'cam':'')+'">'+esc(it.nen)+'</span><br><span class="nhan '+(it.tt?'la':'xam')+'">'+(it.tt?'Đã đăng':'Chưa đăng')+'</span></div></div>'});
+h+='<button class="nut phu" data-a="guituan">Gửi 3 bài tuần này qua Zalo</button>';
+h+='<p class="mo">'+(S.guiTuan?'Đang bật: sáng thứ 2 mở app là có sẵn 3 bài mới, bấm nút trên để gửi vào Zalo cho mình hoặc cho bạn nhân viên.':'Đang tắt nhắc gửi hằng tuần.')+'</p></div>';
+h+='<div class="the"><h2>Bài của cả 12 tuần</h2><p class="mo">Mỗi tuần 3 bài, tổng 36 bài đã ghép sẵn tên tiệm và dịch vụ của bạn.</p><button class="nut nhe" data-a="xemhet">Xem lịch 12 tuần</button><div id="hetlich"></div></div>';
+document.getElementById('m-homnay').innerHTML=h}
+function veViec(it){
+var cap=ghep(it.mau,it.idx);
+return '<div class="viec'+(it.tt?' xong':'')+'"><span class="nhan '+(it.nen==='TikTok'?'cam':'')+'">'+esc(it.nen)+'</span><span class="nhan xam">'+ngayVN(tuKhoa(it.ngay))+'</span><h3>'+esc(it.cd)+'</h3><p class="mo">Cách bài top ngoài thị trường làm: '+esc(it.cau)+'</p><div class="cap">'+esc(cap)+'</div><p class="mo">Quay video: '+esc(it.kb)+'</p><div class="hang"><button class="nut phu nho" data-a="chep" data-id="'+it.id+'" style="width:100%">Chép bài</button><button class="nut '+(it.tt?'nhe':'')+' nho" data-a="dang" data-id="'+it.id+'" style="width:100%">'+(it.tt?'Bỏ đánh dấu':'Đánh dấu đã đăng')+'</button></div></div>'}
+function veNguon(){
+var kho=S.kho.slice().sort(function(a,b){return (b.tt||0)-(a.tt||0)}),h='';
+h+='<div class="the"><h2>Kho bài top ngoài thị trường</h2><p class="mo">Đây là các bài spa đang được nhiều lượt xem, thích, chia sẻ mà SoNa gom về. App xếp bài nhiều tương tác lên trước rồi chuyển thành lịch đăng riêng cho tiệm bạn.</p><button class="nut" data-a="taolich">Chuyển bài top thành lịch 12 tuần</button><button class="nut phu" data-a="mothem">Thêm 1 bài top bạn thấy hay</button><div id="formthem"></div></div>';
+kho.forEach(function(k,i){
+h+='<div class="the"><span class="nhan '+(k.nen==='TikTok'?'cam':'')+'">'+esc(k.nen)+'</span><span class="nhan xam">'+(k.tt||0).toLocaleString('vi-VN')+' lượt tương tác</span><h3>'+esc(k.cd)+'</h3><p class="mo">Nguồn: '+esc(k.ng||'tự thêm')+'</p><p class="mo">Bài top làm thế nào: '+esc(k.cau)+'</p><div class="cap">'+esc(ghep(k.mau,i))+'</div><button class="nut nhe nho" data-a="xoakho" data-i="'+i+'">Bỏ bài này</button></div>'});
+document.getElementById('m-nguon').innerHTML=h}
+function formThem(){
+document.getElementById('formthem').innerHTML='<label>Bài này nói về gì</label><input id="k-cd" placeholder="Ví dụ: khách kể chuyện lần đầu đi spa"><label>Đăng ở đâu</label><select id="k-nen"><option>Facebook</option><option>TikTok</option></select><label>Bao nhiêu lượt tương tác</label><input id="k-tt" type="number" inputmode="numeric" placeholder="Ví dụ: 25000"><label>Thấy ở đâu</label><input id="k-ng" placeholder="Tên trang hoặc nhóm"><label>Bài đó làm thế nào</label><input id="k-cau" placeholder="Ví dụ: quay liền mạch, chữ to giữa màn hình"><label>Lời bài đăng cho tiệm mình</label><textarea id="k-mau" placeholder="Dùng [TÊN TIỆM] [DỊCH VỤ] [GIÁ] [ZALO] để app tự điền"></textarea><button class="nut" data-a="luukho">Lưu vào kho bài top</button>'}
+function veThe(){
+var h='<div class="the"><h2>Thẻ buổi của khách</h2><p class="mo">Mua 10 tặng 2, mỗi lần khách tới bấm trừ 1 buổi, còn bao nhiêu buổi thấy ngay.</p><button class="nut phu" data-a="moithe">Thêm thẻ mới</button><div id="formthe"></div></div>';
+S.the.forEach(function(t,i){
+var con=t.tong-t.dung,ov='';
+for(var j=0;j<t.tong;j++)ov+='<i class="'+(j<t.dung?'dung':'')+'">'+(j+1)+'</i>';
+h+='<div class="the"><h3>'+esc(t.ten)+' <span class="nhan '+(con<=2?'cam':'la')+'">Còn '+con+' buổi</span></h3><p class="mo">'+esc(t.dv)+' · '+esc(t.sdt)+'</p><div class="oval">'+ov+'</div><div class="hang"><button class="nut nho" data-a="tru" data-i="'+i+'" style="width:100%">Trừ 1 buổi</button><button class="nut phu nho" data-a="hoan" data-i="'+i+'" style="width:100%">Hoàn 1 buổi</button></div><button class="nut nhe nho" data-a="xoathe" data-i="'+i+'">Xoá thẻ</button></div>'});
+document.getElementById('m-the').innerHTML=h}
+function formThe(){
+var o='';dvList().forEach(function(d){o+='<option>'+esc(d.ten)+'</option>'});
+document.getElementById('formthe').innerHTML='<label>Tên khách</label><input id="t-ten" placeholder="Chị Lan"><label>Số điện thoại</label><input id="t-sdt" inputmode="tel" placeholder="09..."><label>Dịch vụ</label><select id="t-dv">'+o+'</select><label>Mua bao nhiêu buổi</label><input id="t-so" type="number" inputmode="numeric" value="10"><p class="mo">Mua 10 buổi tiệm tặng thêm 2, app tự cộng.</p><button class="nut" data-a="luuthe">Lưu thẻ</button>'}
+function veKetQua(){
+var m=khoa(thuHai()),thang=khoa(homNay()).slice(0,7);
+var dtThang=S.dt.filter(function(x){return x.ngay.slice(0,7)===thang});
+var tong=0;dtThang.forEach(function(x){tong+=+x.tien||0});
+var theoTho={},theoDv={};
+dtThang.forEach(function(x){theoTho[x.tho]=(theoTho[x.tho]||0)+(+x.tien||0);theoDv[x.dv]=(theoDv[x.dv]||0)+(+x.tien||0)});
+var conThe=0;S.the.forEach(function(t){conThe+=t.tong-t.dung});
+var h='<div class="chinh"><b>'+daDangTuan()+'/3</b><span>Con số chính: số bài đã đăng trong tuần này</span></div>';
+h+='<div class="so"><div class="o"><b>'+S.lich.filter(function(x){return x.tt}).length+'</b><span>Bài đã đăng cộng dồn</span></div><div class="o"><b>'+S.the.length+'</b><span>Khách có thẻ buổi</span></div><div class="o"><b>'+conThe+'</b><span>Buổi khách còn lại</span></div></div>';
+h+='<div class="the"><h2>Doanh thu tháng này</h2><div class="chinh" style="background:#eaf1ff;color:var(--chu)"><b style="color:var(--xanh)">'+tien(tong)+'</b><span class="mo">Tổng đã ghi trong tháng</span></div>';
+h+='<h3>Theo từng thợ</h3><table><tr><th>Thợ</th><th>Doanh thu</th></tr>';
+var ks=Object.keys(theoTho);if(!ks.length)h+='<tr><td colspan="2" class="mo">Chưa ghi buổi nào</td></tr>';
+ks.forEach(function(k){h+='<tr><td>'+esc(k)+'</td><td>'+tien(theoTho[k])+'</td></tr>'});
+h+='</table><h3 style="margin-top:12px">Theo từng dịch vụ</h3><table><tr><th>Dịch vụ</th><th>Doanh thu</th></tr>';
+var kd=Object.keys(theoDv);if(!kd.length)h+='<tr><td colspan="2" class="mo">Chưa ghi buổi nào</td></tr>';
+kd.forEach(function(k){h+='<tr><td>'+esc(k)+'</td><td>'+tien(theoDv[k])+'</td></tr>'});
+h+='</table><button class="nut phu" data-a="moidt">Ghi 1 buổi vừa làm xong</button><div id="formdt"></div></div>';
+h+='<div class="the"><h2>Bài đã đăng theo tuần</h2><table><tr><th>Tuần</th><th>Đã đăng</th></tr>';
+for(var w=1;w<=12;w++){var ds=S.lich.filter(function(x){return x.tuan===w});h+='<tr><td>Tuần '+w+'</td><td>'+ds.filter(function(x){return x.tt}).length+'/3</td></tr>'}
+h+='</table></div>';
+document.getElementById('m-ketqua').innerHTML=h}
+function formDt(){
+var o='',t='';dvList().forEach(function(d){o+='<option data-g="'+(parseInt(String(d.gia).replace(/\D/g,''))||0)+'">'+esc(d.ten)+'</option>'});
+(S.tiem.tho||[]).forEach(function(x){t+='<option>'+esc(x)+'</option>'});
+document.getElementById('formdt').innerHTML='<label>Thợ làm</label><select id="d-tho">'+t+'</select><label>Dịch vụ</label><select id="d-dv">'+o+'</select><label>Số tiền khách trả</label><input id="d-tien" type="number" inputmode="numeric" placeholder="350000"><button class="nut" data-a="luudt">Lưu buổi này</button>'}
+function veHuong(){
+var dv='';(S.tiem.dv||[]).forEach(function(d,i){dv+='<div class="dv"><input data-dv="ten" data-i="'+i+'" value="'+esc(d.ten)+'" placeholder="Tên dịch vụ"><input data-dv="gia" data-i="'+i+'" value="'+esc(d.gia)+'" placeholder="Giá"><button data-a="xoadv" data-i="'+i+'">✕</button></div>'});
+var tho='';(S.tiem.tho||[]).forEach(function(t,i){tho+='<div class="dv"><input data-tho="1" data-i="'+i+'" value="'+esc(t)+'" placeholder="Tên thợ"><button data-a="xoatho" data-i="'+i+'">✕</button></div>'});
+var h='<div class="the"><h2>Thông tin tiệm</h2><p class="mo">Nhập 1 lần, toàn bộ 36 bài đăng tự đổi theo tên tiệm và bảng giá của bạn.</p><label>Tên tiệm</label><input id="i-ten" value="'+esc(S.tiem.ten)+'"><label>Địa chỉ</label><input id="i-dc" value="'+esc(S.tiem.diachi)+'"><label>Zalo của tiệm</label><input id="i-zl" inputmode="tel" value="'+esc(S.tiem.zalo)+'"><label>Bảng giá dịch vụ</label>'+dv+'<button class="nut nhe nho" data-a="themdv">+ Thêm dịch vụ</button><label>Danh sách thợ</label>'+tho+'<button class="nut nhe nho" data-a="themtho">+ Thêm thợ</button><button class="nut" data-a="luutiem">Lưu thông tin tiệm</button></div>';
+h+='<div class="the"><h2>Làm theo 3 bước</h2><p class="mo">1. Điền tên tiệm, bảng giá, danh sách thợ ở trên.<br>2. Vào mục Bài top bấm Chuyển bài top thành lịch 12 tuần.<br>3. Mỗi sáng mở mục Hôm nay, chép bài, đăng xong bấm Đánh dấu đã đăng.</p>';
+h+='<label>Video hướng dẫn ngắn tiếng Việt</label><input id="i-vd" value="'+esc(S.videoHD)+'" placeholder="Dán link video hướng dẫn"><button class="nut phu nho" data-a="xemvideo">Mở video hướng dẫn</button><button class="nut nhe nho" data-a="luuvideo">Lưu link</button>'+''+'</div>';
+h+='<div class="the"><h2>Giá và cam kết</h2><div class="gia"><b>Bản chính: '+GIA+'</b><br>Không phí ẩn, không phí theo chi nhánh, không cam kết 12 tháng, muốn dừng lúc nào cũng được.</div><table><tr><th>Gói</th><th>Giá</th><th>Gồm gì</th></tr><tr><td>Bản thử</td><td>99.000đ</td><td>4 tuần bài đăng, dùng thử trước</td></tr><tr><td>Bản chính</td><td>390.000đ</td><td>12 tuần bài đăng, thẻ buổi, doanh thu theo thợ, cập nhật mẫu mới 3 tháng</td></tr><tr><td>Bản có người làm nội dung</td><td>890.000đ/tháng</td><td>Bản chính và mỗi tuần SoNa viết bài riêng cho tiệm, gửi qua Zalo</td></tr></table></div>';
+h+='<div class="the"><h2>Nhận bài qua Zalo mỗi tuần</h2><p class="mo">Bật mục này thì sáng thứ 2 app nhắc, bạn bấm 1 nút là có sẵn 3 bài của tuần để gửi vào Zalo.</p><label>Nhắc gửi hằng tuần</label><select id="i-gt"><option value="1"'+(S.guiTuan?' selected':'')+'>Bật</option><option value="0"'+(S.guiTuan?'':' selected')+'>Tắt</option></select><label>Số Zalo hỗ trợ của SoNa</label><input id="i-zs" inputmode="tel" value="'+esc(S.zaloSoNa)+'" placeholder="SoNa điền số Zalo thật">'+(S.zaloSoNa?'':'<p class="mo">Chưa điền. Điền số Zalo hỗ trợ.</p>')+'<button class="nut" data-a="luuzalo">Lưu</button><button class="nut phu" data-a="nhanzalo">Nhắn Zalo hỗ trợ</button></div>';
+h+='<div class="the"><h2>Giữ dữ liệu an toàn</h2><p class="mo">Dữ liệu lưu ngay trong máy bạn. Nếu 7 ngày không mở, điện thoại có thể xoá. Nên thêm app ra màn hình chính và thỉnh thoảng bấm sao lưu.</p><button class="nut" data-a="taifile">Sao lưu ra file</button><button class="nut phu" data-a="mofile">Khôi phục từ file</button><button class="nut nhe" data-a="lammoi">Xoá dữ liệu mẫu, bắt đầu trống</button></div>';
+document.getElementById('m-huong').innerHTML=h}
+function ve(){document.getElementById('hd-ten').textContent=S.tiem.ten||'Lịch Đăng Spa';
+document.getElementById('hd-phu').textContent='12 tuần bài đăng · mỗi tuần 3 bài';
+veHomNay();veNguon();veThe();veKetQua();veHuong()}
+function chuyen(m){M=m;['homnay','nguon','the','ketqua','huong'].forEach(function(x){document.getElementById('m-'+x).classList.toggle('hien',x===m)});
+var ns=document.querySelectorAll('nav button');for(var i=0;i<ns.length;i++)ns[i].classList.toggle('chon',ns[i].getAttribute('data-m')===m);window.scrollTo(0,0)}
+function noiDungTuan(){
+var tn=tuanNay(),t='Nội dung tuần này của '+(S.tiem.ten||'tiệm')+':\n';
+tn.forEach(function(it){t+='\n'+ngayVN(tuKhoa(it.ngay))+' - '+it.nen+' - '+it.cd+'\n'+ghep(it.mau,it.idx)+'\nQuay: '+it.kb+'\n'});
+return t}
+function taiFile(){
+try{var b=new Blob([JSON.stringify(S)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');
+a.href=u;a.download='sao-luu-lich-dang-spa.json';document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(u)},1000);bao('Đã tải file sao lưu về máy')}catch(e){bao('Máy chưa cho tải file, bạn thử lại sau nhé')}}
+document.addEventListener('click',function(e){
+var n=e.target.closest('nav button');if(n){chuyen(n.getAttribute('data-m'));return}
+var b=e.target.closest('[data-a]');if(!b)return;var a=b.getAttribute('data-a'),i=+b.getAttribute('data-i'),id=b.getAttribute('data-id');
+if(a==='dang'||a==='chep'){var it=null;S.lich.forEach(function(x){if(x.id===id)it=x});if(!it)return;
+if(a==='chep'){chep(ghep(it.mau,it.idx))}else{it.tt=it.tt?0:1;luu();bao(it.tt?'Đã ghi nhận bài này đăng rồi':'Đã bỏ đánh dấu');veHomNay();veKetQua()}return}
+if(a==='xemhet'){var d=document.getElementById('hetlich');if(d.innerHTML){d.innerHTML='';return}
+var h='';S.lich.forEach(function(x){if(x.id.slice(-1)==='0')h+='<p class="tuan" style="font-weight:700;margin:12px 0 6px;color:var(--mo)">Tuần '+x.tuan+'</p>';
+h+='<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--vien)"><span>'+ngayVN(tuKhoa(x.ngay))+' · '+esc(x.cd)+'</span><span class="nhan '+(x.tt?'la':'xam')+'">'+(x.tt?'Đã đăng':'Chưa')+'</span></div>'});
+d.innerHTML=h;return}
+if(a==='guituan'){var t=noiDungTuan();chep(t);var s=(S.tiem.zalo||'').replace(/\D/g,'');if(s)window.open('https://zalo.me/'+s,'_blank');return}
+if(a==='anhnac'){S.anNhacCai=true;luu();veHomNay();bao('Đã tắt lời nhắc này');return}
+if(a==='taolich'){taoLich(true);bao('Đã xếp 12 tuần bài đăng từ các bài nhiều tương tác nhất');veHomNay();veKetQua();chuyen('homnay');return}
+if(a==='mothem'){formThem();return}
+if(a==='luukho'){var cd=document.getElementById('k-cd').value.trim(),mu=document.getElementById('k-mau').value.trim();
+if(!cd||!mu){bao('Điền chủ đề và lời bài đăng nhé');return}
+S.kho.push({cd:cd,nen:document.getElementById('k-nen').value,tt:+document.getElementById('k-tt').value||0,ng:document.getElementById('k-ng').value.trim(),cau:document.getElementById('k-cau').value.trim()||'Làm giống bài gốc bạn thấy',kb:'Quay theo cách bài gốc đã làm',mau:mu});
+luu();taoLich(true);veNguon();veHomNay();bao('Đã thêm và xếp lại lịch');return}
+if(a==='xoakho'){var kho=S.kho.slice().sort(function(x,y){return (y.tt||0)-(x.tt||0)});var bo=kho[i];S.kho=S.kho.filter(function(x){return x!==bo});luu();taoLich(true);veNguon();veHomNay();bao('Đã bỏ bài này');return}
+if(a==='moithe'){formThe();return}
+if(a==='luuthe'){var tn2=document.getElementById('t-ten').value.trim();if(!tn2){bao('Điền tên khách nhé');return}
+var so=+document.getElementById('t-so').value||10;
+S.the.unshift({ten:tn2,sdt:document.getElementById('t-sdt').value.trim(),dv:document.getElementById('t-dv').value,tong:so>=10?so+2:so,dung:0});luu();veThe();veKetQua();bao('Đã thêm thẻ buổi');return}
+if(a==='tru'){if(S.the[i].dung<S.the[i].tong){S.the[i].dung++;luu();veThe();veKetQua();bao('Đã trừ 1 buổi')}else bao('Thẻ này đã dùng hết');return}
+if(a==='hoan'){if(S.the[i].dung>0){S.the[i].dung--;luu();veThe();veKetQua();bao('Đã hoàn 1 buổi')}return}
+if(a==='xoathe'){S.the.splice(i,1);luu();veThe();veKetQua();bao('Đã xoá thẻ');return}
+if(a==='moidt'){formDt();return}
+if(a==='luudt'){var s2=document.getElementById('d-dv'),g=+s2.options[s2.selectedIndex].getAttribute('data-g')||0;
+var ti=+document.getElementById('d-tien').value||g;if(!ti){bao('Điền số tiền nhé');return}
+S.dt.unshift({ngay:khoa(homNay()),tho:document.getElementById('d-tho').value,dv:s2.value,tien:ti});luu();veKetQua();bao('Đã ghi buổi làm');return}
+if(a==='themdv'){S.tiem.dv.push({ten:'',gia:''});luu();veHuong();return}
+if(a==='xoadv'){S.tiem.dv.splice(i,1);luu();veHuong();return}
+if(a==='themtho'){S.tiem.tho.push('');luu();veHuong();return}
+if(a==='xoatho'){S.tiem.tho.splice(i,1);luu();veHuong();return}
+if(a==='luutiem'){S.tiem.ten=document.getElementById('i-ten').value.trim();S.tiem.diachi=document.getElementById('i-dc').value.trim();S.tiem.zalo=document.getElementById('i-zl').value.trim();
+var ins=document.querySelectorAll('[data-dv]');for(var z=0;z<ins.length;z++){var k=ins[z].getAttribute('data-dv'),ix=+ins[z].getAttribute('data-i');if(S.tiem.dv[ix])S.tiem.dv[ix][k]=ins[z].value.trim()}
+var it2=document.querySelectorAll('[data-tho]');for(var y=0;y<it2.length;y++){var ix2=+it2[y].getAttribute('data-i');S.tiem.tho[ix2]=it2[y].value.trim()}
+S.tiem.dv=S.tiem.dv.filter(function(x){return x.ten});S.tiem.tho=S.tiem.tho.filter(function(x){return x});
+if(S.tiem.ten&&S.tiem.ten!==MAU.ten)S.tiem.mau=false;luu();ve();bao('Đã lưu, các bài đăng đã đổi theo tiệm bạn');return}
+if(a==='luuvideo'){S.videoHD=document.getElementById('i-vd').value.trim();luu();veHuong();bao('Đã lưu link video');return}
+if(a==='xemvideo'){if(S.videoHD)window.open(S.videoHD,'_blank');else bao('Chưa có link video hướng dẫn');return}
+if(a==='luuzalo'){S.zaloSoNa=document.getElementById('i-zs').value.trim();S.guiTuan=document.getElementById('i-gt').value==='1';luu();veHuong();veHomNay();bao('Đã lưu');return}
+if(a==='nhanzalo'){var z=(S.zaloSoNa||'').replace(/\D/g,'');if(z)window.open('https://zalo.me/'+z,'_blank');else bao('Chưa có số Zalo hỗ trợ, điền vào ô bên trên');return}
+if(a==='taifile'){taiFile();return}
+if(a==='mofile'){document.getElementById('nhapfile').click();return}
+if(a==='lammoi'){S.tiem={ten:'',diachi:'',zalo:'',dv:[{ten:'',gia:''}],tho:[''],mau:false};S.the=[];S.dt=[];taoLich(false);luu();ve();chuyen('huong');bao('Đã xoá dữ liệu mẫu, mời bạn điền thông tin tiệm');return}
+});
+document.getElementById('nhapfile').addEventListener('change',function(e){
+var f=e.target.files[0];if(!f)return;var r=new FileReader();
+r.onload=function(){try{var d=JSON.parse(r.result);if(d&&d.tiem){S=d;khoiTao();ve();bao('Đã khôi phục dữ liệu')}else bao('File không đúng')}catch(x){bao('File không đọc được')}};
+r.readAsText(f);e.target.value=''});
+khoiTao();
+if(S.lich.length&&tuanNay().length===0)taoLich(true);
+ve();
+</script>
+</body>
+</html>
