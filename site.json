@@ -1,5 +1,5 @@
 {
-  "ten_web": "SoNa",
+  "ten_web": "SONA",
   "khau_hieu": "Công cụ AI đơn giản cho người kinh doanh bận rộn",
   "zalo": "0965292875",
   "email": "",
@@ -9,5 +9,7 @@
     "so_tai_khoan": "100876937421",
     "ten_tai_khoan": "NGUYEN ANH TUAN",
     "ten_ngan_hang": "VietinBank"
-  }
+  },
+  "slogan": "Công nghệ tiện ích cho mọi người",
+  "logo": "img/mark-192.png"
 }
