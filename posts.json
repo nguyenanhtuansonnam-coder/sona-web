@@ -1,5 +1,16 @@
 [
   {
+    "slug": "nhan-khach-cu-quay-lai-bang-ai",
+    "tieu_de": "Nhắn khách cũ quay lại bằng 1 câu lệnh AI",
+    "tom_tat": "Khách làm xong rồi không quay lại? Nhờ ChatGPT viết một tin nhắn Zalo hỏi thăm, nhắc đúng dịch vụ khách đã làm, không giống tin quảng cáo.",
+    "chu_de": "Chăm khách",
+    "ngay": "2026-09-30",
+    "phut": 3,
+    "viec": "Hôm nay chọn 1 khách cũ đã lâu chưa quay lại, nhờ AI viết tin hỏi thăm rồi gửi qua Zalo.",
+    "sp": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
+    "noi_dung": "Khách cũ đã biết tiệm, đã tin tay nghề, nên mời khách cũ quay lại thường dễ hơn tìm khách mới. Cái khó là tin nhắn phải giống **lời hỏi thăm**, không giống tin quảng cáo gửi hàng loạt.\n\n## Câu lệnh chép dùng ngay\n\n> Viết tin nhắn Zalo cho chị [tên khách], lần trước làm [tên dịch vụ] ở tiệm [tên tiệm] khoảng [số tuần] tuần trước. Hỏi thăm kết quả sau khi làm, nhắc nhẹ đã đến lúc chăm lại, mời chị chọn giờ tuần này. Dưới 60 chữ, xưng em, giọng thân mật, không dùng chữ \"khuyến mãi\".\n\n## Làm theo 3 bước\n\n- Mở danh sách khách hoặc lịch sử tin nhắn, chọn **1 khách** lâu rồi chưa quay lại.\n- Điền **tên khách, dịch vụ đã làm, số tuần** vào câu lệnh, dán vào ChatGPT.\n- Đọc lại, sửa vài chữ cho giống giọng mình, rồi gửi qua **Zalo**.\n\n## Trước khi gửi, soát 3 điều\n\n- Tên khách và dịch vụ đúng với lần khách đã làm.\n- Không hứa kết quả chắc chắn.\n- Mỗi khách một tin riêng, không gửi cùng lúc cho cả danh sách.\n\nMẹo nhỏ: khách nào trả lời, anh chị ghi lại ngày hẹn để lần sau nhắc đúng lúc."
+  },
+  {
     "slug": "dat-ten-combo-dich-vu-bang-ai",
     "tieu_de": "Nhờ AI đặt tên combo dịch vụ cho dễ bán",
     "tom_tat": "Gộp 2 dịch vụ khách hay làm cùng nhau thành 1 combo, nhờ ChatGPT đặt 5 cái tên dễ nhớ, chọn 1 tên để đăng hôm nay.",
