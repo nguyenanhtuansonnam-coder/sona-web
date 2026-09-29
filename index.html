@@ -48,7 +48,8 @@ header{position:sticky;top:0;z-index:20;background:#07070ad9;backdrop-filter:blu
 .thumb::after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;right:-40px;top:-60px;background:radial-gradient(#f0b45844,transparent 70%)}
 .thumb.img{height:auto;aspect-ratio:16/10;display:block}.thumb.img::after{display:none}.thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .cover{border-radius:18px;overflow:hidden;border:1px solid var(--line);margin-bottom:14px;aspect-ratio:16/10;background:#111014}.cover img{width:100%;height:100%;object-fit:cover;display:block}
-.foot .price{white-space:nowrap}.foot .off{margin-left:6px;font-size:11px}.foot .was{margin-left:6px}.btn{white-space:nowrap}
+.foot .price{white-space:nowrap}.foot .off{margin-left:6px;font-size:11px}.foot .lamngay{border:1.5px solid var(--a);background:#f0b45814;border-radius:14px;padding:12px 14px;margin:6px 0 18px}.lamngay b{color:var(--a);font-size:13px;letter-spacing:.04em;text-transform:uppercase}.lamngay p{margin:4px 0 0;font-weight:600}
+.was{margin-left:6px}.btn{white-space:nowrap}
 .was{color:var(--m);text-decoration:line-through;font-weight:600;font-size:.62em;margin-left:8px}.off{display:inline-block;margin-left:8px;font-size:12px;font-weight:800;color:var(--ink);background:var(--a);border-radius:8px;padding:2px 7px;vertical-align:middle}
 .thumb svg{width:46px;height:46px;color:var(--a)}
 .thumb .t{position:absolute;left:12px;top:12px;font-size:12px;font-weight:600;background:#07070ab3;border:1px solid #ffffff1a;border-radius:999px;padding:3px 10px;color:var(--a2)}
@@ -272,7 +273,7 @@ function md(src){const inl=t=>esc(t).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>");const
 function article(a){document.title=a.tieu_de+" · "+(SITE.ten_web||"SONA");const sp=a.sp&&PRODUCTS.find(p=>p.slug===a.sp);
   $("#app").innerHTML=`<article class="art"><a class="back" href="#hoc">← Học AI miễn phí</a>
   <div class="meta"><span class="free">Miễn phí</span><span>${esc(a.chu_de||"")}</span><span>${esc(fmtDate(a.ngay))}</span><span>${esc(a.phut||3)} phút đọc</span></div>
-  <h1>${esc(a.tieu_de)}</h1><div class="body">${md(a.noi_dung)}</div>
+  <h1>${esc(a.tieu_de)}</h1>${a.viec?`<div class="lamngay"><b>Làm ngay 1 việc</b><p>${esc(a.viec)}</p></div>`:""}<div class="body">${md(a.noi_dung)}</div>
   ${sp?`<div class="cta"><b>Muốn có đủ bộ mẫu dùng ngay?</b><p>${esc(sp.ten)} · ${esc(priceOf(sp.goi?.[0]))}</p><a class="btn" href="#sp/${esc(sp.slug)}">Xem sản phẩm ${ICON.arrow}</a></div>`:""}
   </article>`;document.querySelectorAll("[data-cp]").forEach(b=>b.onclick=()=>copy(b.dataset.cp))}
 /* ---------- trang sản phẩm ---------- */
