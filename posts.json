@@ -1,5 +1,15 @@
 [
   {
+    "slug": "quy-trinh-don-khach-cho-nhan-vien-bang-ai",
+    "tieu_de": "Viết quy trình đón khách 5 bước cho nhân viên bằng AI",
+    "tom_tat": "Nhân viên mới mỗi người đón khách một kiểu? Nhờ ChatGPT viết 5 bước đón khách ngắn gọn, in ra dán ở quầy.",
+    "chu_de": "Quản lý tiệm",
+    "ngay": "2026-10-01",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 5 bước đón khách của tiệm, in ra dán ở quầy lễ tân.",
+    "noi_dung": "Khi tiệm có thêm người, mỗi bạn chào khách, mời nước, hỏi nhu cầu một kiểu. Một tờ **5 bước đón khách** dán ở quầy giúp ai cũng làm giống nhau, chủ tiệm đỡ phải nhắc đi nhắc lại.\n\n## Câu lệnh chép dùng ngay\n\n> Viết quy trình đón khách 5 bước cho tiệm [loại tiệm: spa, nail, tóc] tên [tên tiệm]. Từ lúc khách bước vào đến lúc khách ngồi vào ghế. Mỗi bước 1 câu ngắn, kèm 1 câu nói mẫu cho nhân viên. Tiệm có [số] nhân viên, khách chủ yếu là [mô tả khách]. Viết dễ hiểu cho người mới đi làm.\n\n## Làm theo 3 bước\n\n- Điền **loại tiệm, tên tiệm, số nhân viên, kiểu khách** vào câu lệnh, dán vào ChatGPT.\n- Đọc lại, sửa những bước **tiệm mình không làm** (ví dụ tiệm không mời trà thì bỏ).\n- In ra 1 tờ, dán ở **quầy lễ tân**, chỉ cho nhân viên đọc một lần.\n\n## Trước khi in, soát 3 điều\n\n- Câu nói mẫu nghe tự nhiên, đúng cách xưng hô của tiệm.\n- Không có bước nào tiệm chưa làm được.\n- Đủ ngắn để đọc trong 1 phút.\n\nMẹo nhỏ: sau 1 tuần hỏi nhân viên bước nào khó làm, rồi nhờ AI sửa lại cho gọn hơn."
+  },
+  {
     "slug": "nhan-khach-cu-quay-lai-bang-ai",
     "tieu_de": "Nhắn khách cũ quay lại bằng 1 câu lệnh AI",
     "tom_tat": "Khách làm xong rồi không quay lại? Nhờ ChatGPT viết một tin nhắn Zalo hỏi thăm, nhắc đúng dịch vụ khách đã làm, không giống tin quảng cáo.",
