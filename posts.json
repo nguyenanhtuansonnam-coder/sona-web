@@ -1,5 +1,15 @@
 [
   {
+    "slug": "tin-nhan-xin-coc-giu-lich-bang-ai",
+    "tieu_de": "Viết tin nhắn xin cọc giữ lịch hẹn bằng AI",
+    "tom_tat": "Khách hẹn rồi không đến? Nhờ ChatGPT viết một tin nhắn xin cọc nhẹ nhàng, lịch sự, gửi qua Zalo khi khách đặt lịch.",
+    "chu_de": "Chăm khách",
+    "ngay": "2026-10-02",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 1 tin nhắn xin cọc giữ lịch, lưu sẵn trong Zalo để gửi khách đặt hẹn.",
+    "noi_dung": "Khách hẹn rồi không đến làm tiệm mất cả buổi trống. Nhiều phần mềm làm đẹp trên thế giới coi **đặt cọc** là việc bình thường để giữ lịch, tiệm nhỏ có thể làm bằng một tin nhắn lịch sự.\n\n## Câu lệnh chép dùng ngay\n\n> Viết tin nhắn Zalo gửi khách vừa đặt lịch [tên dịch vụ] lúc [giờ, ngày] ở tiệm [tên tiệm]. Xin khách chuyển cọc [số tiền] để giữ chỗ, ghi rõ tiền cọc được trừ vào hóa đơn và cách hủy hoặc đổi lịch trước [số giờ] giờ. Dưới 70 chữ, xưng em, lịch sự, không làm khách thấy bị nghi ngờ.\n\n## Làm theo 3 bước\n\n- Điền **dịch vụ, giờ hẹn, số tiền cọc, số giờ báo trước** vào câu lệnh, dán vào ChatGPT.\n- Đọc lại, thêm **số tài khoản của tiệm** ở cuối tin.\n- Lưu tin này làm **tin nhắn mẫu** trong Zalo để lần sau chỉ cần sửa giờ hẹn.\n\n## Trước khi gửi, soát 3 điều\n\n- Số tiền cọc nhỏ, hợp với giá dịch vụ.\n- Nói rõ khi nào được trả lại cọc, khi nào không.\n- Số tài khoản đúng, tên chủ tài khoản đúng.\n\nMẹo nhỏ: khách quen lâu năm có thể không cần cọc, anh chị tự chọn."
+  },
+  {
     "slug": "quy-trinh-don-khach-cho-nhan-vien-bang-ai",
     "tieu_de": "Viết quy trình đón khách 5 bước cho nhân viên bằng AI",
     "tom_tat": "Nhân viên mới mỗi người đón khách một kiểu? Nhờ ChatGPT viết 5 bước đón khách ngắn gọn, in ra dán ở quầy.",
