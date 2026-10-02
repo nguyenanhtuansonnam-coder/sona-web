@@ -1,5 +1,15 @@
 [
   {
+    "slug": "loi-moi-khach-gioi-thieu-ban-bang-ai",
+    "tieu_de": "Viết lời mời khách quen giới thiệu bạn bè bằng AI",
+    "tom_tat": "Khách quen hài lòng là người quảng cáo tốt nhất cho tiệm. Nhờ ChatGPT viết một lời mời ngắn, nhờ khách rủ bạn đến tiệm.",
+    "chu_de": "Bán hàng",
+    "ngay": "2026-10-03",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 1 lời mời giới thiệu bạn, gửi cho 3 khách quen vừa khen tiệm.",
+    "noi_dung": "Khách được bạn bè giới thiệu thường tin tiệm hơn khách thấy quảng cáo. Tiệm nhỏ chỉ cần **một lời mời ngắn** gửi đúng lúc khách đang vui.\n\n## Câu lệnh chép dùng ngay\n\n> Viết tin nhắn Zalo gửi khách quen của tiệm [tên tiệm] vừa làm [tên dịch vụ]. Cảm ơn khách, rồi mời khách giới thiệu bạn bè đến tiệm. Bạn mới được [ưu đãi cho bạn mới], khách giới thiệu được [quà cho người giới thiệu] khi bạn đến làm. Dưới 60 chữ, xưng em, thân thiện, không năn nỉ.\n\n## Làm theo 3 bước\n\n- Điền **tên tiệm, dịch vụ, ưu đãi cho bạn mới, quà cho người giới thiệu** vào câu lệnh, dán vào ChatGPT.\n- Đọc lại, sửa cho giống cách tiệm hay nói chuyện.\n- Gửi cho **3 khách quen** vừa khen tiệm, tốt nhất ngay trong ngày khách vừa làm xong.\n\n## Trước khi gửi, soát 3 điều\n\n- Ưu đãi và quà là thứ tiệm **làm được thật**.\n- Ghi rõ bạn mới cần nói tên người giới thiệu khi đến.\n- Ghi lại tên người giới thiệu vào sổ để nhớ tặng quà.\n\nMẹo nhỏ: chỉ gửi cho khách đã tỏ ra hài lòng, đừng gửi hàng loạt."
+  },
+  {
     "slug": "tin-nhan-xin-coc-giu-lich-bang-ai",
     "tieu_de": "Viết tin nhắn xin cọc giữ lịch hẹn bằng AI",
     "tom_tat": "Khách hẹn rồi không đến? Nhờ ChatGPT viết một tin nhắn xin cọc nhẹ nhàng, lịch sự, gửi qua Zalo khi khách đặt lịch.",
