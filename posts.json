@@ -1,5 +1,15 @@
 [
   {
+    "slug": "tra-loi-danh-gia-xau-bang-ai",
+    "tieu_de": "Trả lời đánh giá chê của khách bằng AI cho bình tĩnh, lịch sự",
+    "tom_tat": "Khách chê trên Facebook hay Google, người khác đọc cách tiệm trả lời. Nhờ ChatGPT viết câu trả lời ngắn, nhận lỗi đúng chỗ và mời khách nhắn riêng.",
+    "chu_de": "Chăm khách",
+    "ngay": "2026-10-04",
+    "phut": 3,
+    "viec": "Hôm nay chọn 1 đánh giá chê chưa trả lời, nhờ AI viết câu trả lời rồi đăng lên.",
+    "noi_dung": "Khi khách chê công khai, người đọc sau sẽ nhìn **cách tiệm trả lời** nhiều hơn lời chê. Trả lời bình tĩnh, ngắn gọn giúp người mới vẫn yên tâm đến tiệm.\n\n## Câu lệnh chép dùng ngay\n\n> Khách để lại đánh giá này về tiệm [tên tiệm]: \"[dán nguyên văn lời chê]\". Viết câu trả lời công khai dưới 70 chữ, xưng em, giọng bình tĩnh và lịch sự. Cảm ơn khách đã góp ý, xin lỗi đúng điều khách không vui, nói ngắn tiệm sẽ làm gì, rồi mời khách nhắn riêng qua [Zalo hoặc số điện thoại] để tiệm hỗ trợ. Không cãi lại, không đổ lỗi cho khách, không hứa điều tiệm không làm được.\n\n## Làm theo 3 bước\n\n- Dán **nguyên văn lời chê**, tên tiệm và số Zalo vào câu lệnh, rồi dán vào ChatGPT.\n- Đọc lại, sửa cho giống cách tiệm hay nói. Nếu khách nói sai sự thật, vẫn giữ giọng nhẹ nhàng và chỉ nói ngắn sự việc.\n- Đăng câu trả lời ngay dưới đánh giá, rồi **nhắn riêng** cho khách nếu có số.\n\n## Trước khi đăng, soát 3 điều\n\n- Không nhắc tên nhân viên, không lộ thông tin riêng của khách.\n- Điều tiệm hứa sửa là việc **làm được thật**.\n- Không xin khách xóa đánh giá trong câu trả lời công khai.\n\nMẹo nhỏ: chờ đến khi bình tĩnh hẳn rồi mới đăng, đừng trả lời lúc đang bực."
+  },
+  {
     "slug": "loi-moi-khach-gioi-thieu-ban-bang-ai",
     "tieu_de": "Viết lời mời khách quen giới thiệu bạn bè bằng AI",
     "tom_tat": "Khách quen hài lòng là người quảng cáo tốt nhất cho tiệm. Nhờ ChatGPT viết một lời mời ngắn, nhờ khách rủ bạn đến tiệm.",
