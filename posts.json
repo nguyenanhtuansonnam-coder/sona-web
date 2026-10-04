@@ -1,5 +1,15 @@
 [
   {
+    "slug": "sap-xep-bang-gia-dich-vu-bang-ai",
+    "tieu_de": "Nhờ AI sắp lại bảng giá dịch vụ cho khách dễ đọc, dễ chọn",
+    "tom_tat": "Bảng giá dài, tên dịch vụ khó hiểu làm khách hỏi đi hỏi lại. Đưa bảng giá cũ cho ChatGPT, nhận lại bảng chia nhóm rõ ràng để in hoặc đăng.",
+    "chu_de": "Bán hàng",
+    "ngay": "2026-10-05",
+    "phut": 3,
+    "viec": "Hôm nay chép bảng giá hiện tại của tiệm, nhờ AI sắp lại theo nhóm rồi đăng lên trang.",
+    "noi_dung": "Khách nhìn bảng giá chỉ vài giây. Bảng **chia nhóm rõ, tên dễ hiểu** giúp khách tự chọn và bớt nhắn hỏi giá.\n\n## Câu lệnh chép dùng ngay\n\n> Đây là bảng giá hiện tại của tiệm [tên tiệm, loại tiệm]: [dán toàn bộ tên dịch vụ và giá]. Hãy sắp lại thành bảng giá cho khách đọc trên điện thoại: chia 3-5 nhóm, mỗi nhóm có tên ngắn; mỗi dịch vụ ghi tên dễ hiểu, giá và 1 dòng dưới 12 chữ nói khách nhận được gì. Giữ nguyên mọi con số giá, không thêm dịch vụ hay khuyến mãi mà tôi không đưa. Cuối bảng ghi 1 dòng mời khách nhắn [Zalo hoặc số điện thoại] để đặt lịch.\n\n## Làm theo 3 bước\n\n- Chép **toàn bộ** dịch vụ và giá đang có (kể cả giấy viết tay) vào câu lệnh, rồi dán vào ChatGPT.\n- Đọc lại từng dòng: **giá phải giống hệt** bảng cũ. Sửa tên nào tiệm hay gọi khác.\n- Dán chữ vào một mẫu bảng giá miễn phí trên Canva, hoặc đăng thẳng thành bài và ghim lên đầu trang.\n\n## Trước khi đăng, soát 3 điều\n\n- Không có dịch vụ nào bị AI bỏ sót hay tự thêm vào.\n- Giá ghi rõ \"từ\" nếu còn tùy độ dài tóc, móng hay tình trạng da.\n- Số Zalo hoặc số điện thoại ở cuối bảng là số đúng.\n\nMẹo nhỏ: đặt dịch vụ khách hay làm nhất lên **đầu mỗi nhóm**."
+  },
+  {
     "slug": "tra-loi-danh-gia-xau-bang-ai",
     "tieu_de": "Trả lời đánh giá chê của khách bằng AI cho bình tĩnh, lịch sự",
     "tom_tat": "Khách chê trên Facebook hay Google, người khác đọc cách tiệm trả lời. Nhờ ChatGPT viết câu trả lời ngắn, nhận lỗi đúng chỗ và mời khách nhắn riêng.",
