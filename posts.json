@@ -1,5 +1,15 @@
 [
   {
+    "slug": "tin-tra-loi-tu-dong-facebook-bang-ai",
+    "tieu_de": "Nhờ AI viết tin trả lời tự động cho trang Facebook của tiệm",
+    "tom_tat": "Khách nhắn lúc tiệm bận hay đã đóng cửa vẫn nhận ngay một câu chào rõ ràng. Nhờ ChatGPT viết câu ngắn, rồi bật Trả lời tức thì miễn phí trong Meta Business Suite.",
+    "chu_de": "Chăm khách",
+    "ngay": "2026-10-06",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 1 câu trả lời tự động rồi bật Trả lời tức thì cho trang Facebook của tiệm.",
+    "noi_dung": "Khách nhắn mà chờ lâu dễ bỏ đi hỏi tiệm khác. Một câu trả lời tự động giúp khách biết tiệm **đã nhận tin** và khi nào sẽ được trả lời.\n\n## Câu lệnh chép dùng ngay\n\n> Viết 1 tin nhắn trả lời tự động cho trang Facebook của tiệm [tên tiệm, loại tiệm], dưới 300 ký tự, xưng em. Cảm ơn khách đã nhắn, nói tiệm mở cửa [giờ mở cửa] và sẽ trả lời sớm trong giờ làm việc, mời khách để lại tên, dịch vụ muốn làm và giờ muốn đến. Ghi số Zalo [số Zalo] cho khách cần gấp. Giọng thân thiện, không hứa giảm giá.\n\n## Làm theo 3 bước\n\n- Điền tên tiệm, giờ mở cửa, số Zalo vào câu lệnh, dán vào ChatGPT, đọc lại và sửa cho giống cách tiệm hay nói.\n- Mở **Meta Business Suite**, vào **Hộp thư**, bấm **Tự động hóa** rồi chọn **Trả lời tức thì** (tên trên máy có thể hơi khác).\n- Bật lên, dán câu trả lời vào, bấm **Lưu**. Nhờ một người quen nhắn thử vào trang để xem tin có hiện ra không.\n\n## Trước khi bật, soát 3 điều\n\n- Câu ngắn, dưới khoảng 500 ký tự, đọc trên điện thoại không phải kéo.\n- Giờ mở cửa và số Zalo ghi **đúng**.\n- Nếu trang đang để chế độ **vắng mặt**, tắt đi, vì khi đó trả lời tức thì có thể không gửi.\n\nMẹo nhỏ: tự động chỉ để chào và giữ khách, vẫn nhớ **tự trả lời** khách trong giờ làm việc."
+  },
+  {
     "slug": "sap-xep-bang-gia-dich-vu-bang-ai",
     "tieu_de": "Nhờ AI sắp lại bảng giá dịch vụ cho khách dễ đọc, dễ chọn",
     "tom_tat": "Bảng giá dài, tên dịch vụ khó hiểu làm khách hỏi đi hỏi lại. Đưa bảng giá cũ cho ChatGPT, nhận lại bảng chia nhóm rõ ràng để in hoặc đăng.",
