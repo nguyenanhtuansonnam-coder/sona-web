@@ -1,5 +1,16 @@
 [
   {
+    "slug": "tin-chuc-sinh-nhat-khach-bang-ai",
+    "tieu_de": "Nhờ AI viết tin chúc mừng sinh nhật khách quen",
+    "tom_tat": "Một tin chúc sinh nhật đúng ngày làm khách nhớ tới tiệm. Nhờ ChatGPT viết 1 mẫu ngắn, ấm áp, rồi dùng lại cho mọi khách có sinh nhật trong tháng.",
+    "chu_de": "Chăm khách",
+    "ngay": "2026-10-07",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 1 mẫu tin chúc sinh nhật rồi gửi cho khách nào có sinh nhật tuần này.",
+    "sp": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
+    "noi_dung": "Khách quen được tiệm nhớ ngày sinh nhật sẽ thấy mình **được quan tâm**. Chỉ cần 1 mẫu tin viết sẵn là gửi được cho nhiều người.\n\n## Câu lệnh chép dùng ngay\n\n> Viết 1 tin nhắn Zalo chúc mừng sinh nhật khách quen của tiệm [tên tiệm, loại tiệm], dưới 300 ký tự, xưng em, gọi khách là [anh/chị + tên]. Chúc ngắn gọn, ấm áp, không sến. Nhắc món quà nhỏ tiệm tặng: [quà, ví dụ giảm 10% hoặc tặng 1 lần gội], dùng được trong [số ngày] ngày. Cuối tin mời khách nhắn lại để đặt lịch. Không hứa điều gì khác ngoài món quà đã ghi.\n\n## Làm theo 3 bước\n\n- Điền tên tiệm, món quà và số ngày dùng quà vào câu lệnh, dán vào ChatGPT. Đọc lại, sửa cho giống cách tiệm hay nói.\n- Lưu tin vào ghi chú điện thoại. Khi gửi, chỉ cần **đổi tên khách**.\n- Mở sổ khách hoặc danh bạ, tìm khách có sinh nhật **tuần này**, gửi qua Zalo vào buổi sáng.\n\n## Trước khi gửi, soát 3 điều\n\n- Tên khách viết **đúng**, xưng hô đúng anh hay chị.\n- Món quà và hạn dùng **đúng như tiệm sẽ làm**, nhân viên cũng biết để không từ chối khách.\n- Mỗi khách chỉ gửi **1 tin**, không gửi kèm quảng cáo khác.\n\nMẹo nhỏ: nếu tiệm chưa có ngày sinh của khách, lần tới khách đến hãy hỏi nhẹ và ghi vào sổ."
+  },
+  {
     "slug": "tin-tra-loi-tu-dong-facebook-bang-ai",
     "tieu_de": "Nhờ AI viết tin trả lời tự động cho trang Facebook của tiệm",
     "tom_tat": "Khách nhắn lúc tiệm bận hay đã đóng cửa vẫn nhận ngay một câu chào rõ ràng. Nhờ ChatGPT viết câu ngắn, rồi bật Trả lời tức thì miễn phí trong Meta Business Suite.",
