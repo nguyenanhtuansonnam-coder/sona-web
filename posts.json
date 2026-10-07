@@ -1,5 +1,16 @@
 [
   {
+    "slug": "bai-uu-dai-tren-google-maps-bang-ai",
+    "tieu_de": "Nhờ AI viết 1 bài ưu đãi đăng lên Google Maps của tiệm",
+    "tom_tat": "Nhiều khách tìm tiệm trên Google Maps. Nếu tiệm đã có hồ sơ trên Google, đăng 1 bài ưu đãi ở đó là miễn phí. Nhờ ChatGPT viết bài ngắn, ý chính đặt ngay đầu.",
+    "chu_de": "Viết nội dung",
+    "ngay": "2026-10-08",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 1 bài ưu đãi ngắn rồi đăng lên hồ sơ Google Maps của tiệm.",
+    "sp": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
+    "noi_dung": "Khách tìm tiệm trên Google Maps sẽ thấy bài đăng của tiệm. Đăng bài ở đây **không tốn tiền quảng cáo**. Trên điện thoại khách chỉ thấy khoảng **1 dòng rưỡi đầu**, nên ưu đãi phải nằm ngay câu đầu.\n\n## Câu lệnh chép dùng ngay\n\n> Viết 1 bài ưu đãi cho tiệm [tên tiệm, loại tiệm] để đăng lên Google Maps. Câu đầu tiên dưới 90 ký tự, nói rõ ưu đãi: [ưu đãi, ví dụ giảm 20% gội đầu dưỡng sinh]. Sau đó 2 câu ngắn: áp dụng từ [ngày] đến [ngày], cách đặt lịch là [gọi hoặc nhắn Zalo số ...]. Không dùng từ tiếng Anh, không hứa điều gì ngoài ưu đãi đã ghi.\n\n## Làm theo 3 bước\n\n- Điền tên tiệm, ưu đãi, ngày và cách đặt lịch vào câu lệnh, dán vào ChatGPT. Đọc lại, sửa cho đúng giọng tiệm.\n- Mở Google Maps, vào **hồ sơ của tiệm** (tài khoản đang quản lý tiệm), tìm mục đăng bài và chọn loại **Ưu đãi**.\n- Dán bài, điền ngày bắt đầu và kết thúc giống trong bài, thêm 1 ảnh thật của tiệm rồi đăng.\n\n## Trước khi đăng, soát 3 điều\n\n- Câu đầu có **đủ ưu đãi**, khách chỉ đọc câu đó vẫn hiểu.\n- Ngày trong bài và ngày điền vào ô **khớp nhau**.\n- Nhân viên đã biết ưu đãi, để khách gọi tới **không bị hỏi lại**.\n\nMẹo nhỏ: nếu tiệm chưa có hồ sơ trên Google Maps thì để dành bài này, đăng lên Facebook hoặc Zalo trước."
+  },
+  {
     "slug": "tin-chuc-sinh-nhat-khach-bang-ai",
     "tieu_de": "Nhờ AI viết tin chúc mừng sinh nhật khách quen",
     "tom_tat": "Một tin chúc sinh nhật đúng ngày làm khách nhớ tới tiệm. Nhờ ChatGPT viết 1 mẫu ngắn, ấm áp, rồi dùng lại cho mọi khách có sinh nhật trong tháng.",
