@@ -1,5 +1,16 @@
 [
   {
+    "slug": "hen-gio-dang-facebook-ca-tuan-bang-ai",
+    "tieu_de": "Nhờ AI viết 3 bài rồi hẹn giờ đăng sẵn cho cả tuần trên Facebook",
+    "tom_tat": "Không cần ngày nào cũng nhớ đăng bài. Nhờ ChatGPT viết 3 bài cho tuần tới, rồi hẹn giờ đăng trên Trang Facebook của tiệm bằng Meta Business Suite, miễn phí.",
+    "chu_de": "Viết nội dung",
+    "ngay": "2026-10-09",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI viết 3 bài cho tuần tới rồi hẹn giờ đăng sẵn trên Trang Facebook của tiệm.",
+    "sp": "chatgpt-cho-chu-spa-viet-bai-dang-tra-loi-inbox",
+    "noi_dung": "Trang Facebook của tiệm cho **hẹn giờ đăng bài miễn phí** trong Meta Business Suite. Ngồi 1 lần, cả tuần tự đăng, anh chị chỉ cần trả lời khách.\n\n## Câu lệnh chép dùng ngay\n\n> Viết 3 bài Facebook ngắn cho tiệm [tên tiệm, loại tiệm] để đăng trong tuần tới. Bài 1 giới thiệu 1 dịch vụ được khách thích nhất: [tên dịch vụ, giá]. Bài 2 kể 1 mẹo chăm sóc khách làm được tại nhà. Bài 3 nhắc ưu đãi đang có: [ưu đãi, hạn dùng]. Mỗi bài dưới 80 chữ, câu đầu gây chú ý, cuối bài ghi cách đặt lịch: [số điện thoại hoặc Zalo]. Không dùng từ tiếng Anh, không thêm thông tin tôi chưa đưa; thiếu gì thì ghi [CẦN ĐIỀN].\n\n## Làm theo 3 bước\n\n- Điền tên tiệm, dịch vụ, ưu đãi và số điện thoại vào câu lệnh, dán vào ChatGPT. Đọc lại, sửa chỗ nào ghi **[CẦN ĐIỀN]**.\n- Mở **Meta Business Suite** (app trên điện thoại hoặc trang business.facebook.com), chọn Trang của tiệm, bấm **Tạo bài viết**, dán bài 1 và thêm 1 ảnh thật của tiệm.\n- Bấm mũi tên nhỏ cạnh nút Đăng, chọn **hẹn giờ**, chọn ngày giờ. Làm tương tự cho bài 2 và bài 3, mỗi bài cách nhau 2 ngày.\n\n## Trước khi tắt máy, soát 3 điều\n\n- Mở **lịch nội dung** trong Meta Business Suite, thấy đủ 3 bài đã hẹn.\n- Giá và hạn ưu đãi trong bài **đúng với tiệm**.\n- Chọn giờ khách hay lướt điện thoại, ví dụ **trưa hoặc tối**.\n\nMẹo nhỏ: bài đã hẹn vẫn sửa hoặc xóa được trước giờ đăng, nên cứ hẹn trước rồi chỉnh sau cũng được."
+  },
+  {
     "slug": "bai-uu-dai-tren-google-maps-bang-ai",
     "tieu_de": "Nhờ AI viết 1 bài ưu đãi đăng lên Google Maps của tiệm",
     "tom_tat": "Nhiều khách tìm tiệm trên Google Maps. Nếu tiệm đã có hồ sơ trên Google, đăng 1 bài ưu đãi ở đó là miễn phí. Nhờ ChatGPT viết bài ngắn, ý chính đặt ngay đầu.",
