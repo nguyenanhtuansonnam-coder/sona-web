@@ -1,5 +1,15 @@
 [
   {
+    "slug": "phieu-hoi-khach-moi-bang-ai",
+    "tieu_de": "Nhờ AI soạn 1 phiếu hỏi khách mới trước khi làm dịch vụ",
+    "tom_tat": "Hỏi trước vài câu giúp tiệm biết khách có dị ứng, đã làm gì trước đó và muốn kết quả ra sao. Nhờ ChatGPT soạn phiếu ngắn, in ra hoặc gửi qua Zalo.",
+    "chu_de": "Chăm khách",
+    "ngay": "2026-10-10",
+    "phut": 3,
+    "viec": "Hôm nay nhờ AI soạn 1 phiếu 6 câu hỏi khách mới, in ra để ở quầy hoặc lưu sẵn để gửi Zalo.",
+    "noi_dung": "Khách mới thường quên kể chuyện dị ứng hay dịch vụ đã làm ở tiệm khác. Một phiếu hỏi ngắn giúp thợ **biết trước**, đỡ hỏi lại và đỡ làm sai ý khách.\n\n## Câu lệnh chép dùng ngay\n\n> Soạn 1 phiếu hỏi khách mới cho tiệm [loại tiệm: spa / nail / salon tóc] tên [tên tiệm]. Đúng 6 câu, mỗi câu khách trả lời trong 1 dòng hoặc đánh dấu. Phải có: tên và số điện thoại, dịch vụ muốn làm, đã làm dịch vụ gì ở tiệm khác trong 3 tháng qua, có dị ứng hay da/tóc/móng nhạy cảm không, kết quả mong muốn. Cuối phiếu có 1 dòng khách ký tên và ngày. Lời lẽ lịch sự, dễ hiểu, không dùng từ tiếng Anh, không hứa hẹn kết quả.\n\n## Làm theo 3 bước\n\n- Điền loại tiệm và tên tiệm vào câu lệnh, dán vào ChatGPT. Đọc lại, bỏ câu nào tiệm không cần.\n- Chép phiếu vào điện thoại hoặc máy tính, **in ra vài tờ** để ở quầy.\n- Lưu thêm bản chữ trong ghi chú điện thoại. Khách đặt lịch qua Zalo thì gửi trước để khách điền sẵn; ảnh mẫu khách muốn làm thì nhờ khách **gửi kèm qua Zalo**.\n\n## Khi dùng phiếu, nhớ 3 điều\n\n- Thợ **đọc phiếu trước** khi bắt đầu làm.\n- Khách ghi có dị ứng thì **hỏi kỹ thêm**, không làm thử khi chưa rõ.\n- Cất phiếu theo tên khách, lần sau khách quay lại chỉ cần hỏi **có gì thay đổi không**.\n\nMẹo nhỏ: phiếu chỉ nên vừa 1 mặt giấy, dài quá khách sẽ ngại điền."
+  },
+  {
     "slug": "hen-gio-dang-facebook-ca-tuan-bang-ai",
     "tieu_de": "Nhờ AI viết 3 bài rồi hẹn giờ đăng sẵn cho cả tuần trên Facebook",
     "tom_tat": "Không cần ngày nào cũng nhớ đăng bài. Nhờ ChatGPT viết 3 bài cho tuần tới, rồi hẹn giờ đăng trên Trang Facebook của tiệm bằng Meta Business Suite, miễn phí.",
