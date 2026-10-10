@@ -1,5 +1,15 @@
 [
   {
+    "slug": "mo-ta-san-pham-shop-online-bang-ai",
+    "tieu_de": "Nhờ AI viết mô tả 1 món hàng cho shop online từ thông tin thật",
+    "tom_tat": "Khách mua online chỉ dựa vào chữ và ảnh. Đưa cho ChatGPT đúng thông tin thật của món hàng, nhờ viết mô tả ngắn, rõ, rồi tự soát lại trước khi đăng.",
+    "chu_de": "Bán hàng",
+    "ngay": "2026-10-11",
+    "phut": 3,
+    "viec": "Hôm nay chọn 1 món bán chạy nhất, nhờ AI viết lại mô tả từ thông tin thật rồi thay vào trang bán.",
+    "noi_dung": "Khách mua online không cầm được món hàng, nên họ hỏi đi hỏi lại về kích thước, chất liệu, cách đổi trả. Một đoạn mô tả **rõ và đúng** giúp khách tự hiểu, đỡ nhắn hỏi.\n\n## Câu lệnh chép dùng ngay\n\n> Viết mô tả bán hàng cho 1 món hàng của shop tôi. Chỉ dùng đúng thông tin tôi đưa dưới đây, không tự thêm số liệu, không hứa công dụng, thiếu gì thì ghi [CẦN ĐIỀN]. Gồm: 1 câu mở đầu nói món này hợp với ai, 5 gạch đầu dòng (chất liệu, kích thước, màu, cách dùng hoặc bảo quản, đổi trả), 1 câu mời nhắn shop. Lời lẽ thân thiện, câu ngắn, không dùng từ tiếng Anh. Thông tin: [tên món, chất liệu, kích thước, màu có sẵn, giá, cách bảo quản, chính sách đổi trả của shop].\n\n## Làm theo 3 bước\n\n- Điền **thông tin thật** của món hàng vào cuối câu lệnh, dán vào ChatGPT.\n- Đọc kỹ bài AI viết. Chỗ nào ghi [CẦN ĐIỀN] thì tự điền; câu nào **không đúng với hàng thật** thì xóa.\n- Thay mô tả cũ trên trang bán, đăng kèm **ảnh chụp thật** của món hàng.\n\n## Trước khi đăng, soát 3 điều\n\n- Kích thước, màu, giá **khớp với hàng đang có**.\n- Không có câu khen quá như tốt nhất, chữa được, cam kết 100%.\n- Chính sách đổi trả ghi **đúng như shop đang làm**.\n\nMẹo nhỏ: món nào khách hỏi nhiều nhất thì sửa mô tả món đó trước."
+  },
+  {
     "slug": "phieu-hoi-khach-moi-bang-ai",
     "tieu_de": "Nhờ AI soạn 1 phiếu hỏi khách mới trước khi làm dịch vụ",
     "tom_tat": "Hỏi trước vài câu giúp tiệm biết khách có dị ứng, đã làm gì trước đó và muốn kết quả ra sao. Nhờ ChatGPT soạn phiếu ngắn, in ra hoặc gửi qua Zalo.",
